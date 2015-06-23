@@ -229,6 +229,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="VrijwilligerToevoegen.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
@@ -364,6 +365,7 @@
     <Compile Include="BU\Taak.cs" />
     <Compile Include="BU\VerkoopOrder.cs" />
     <Compile Include="BU\Werkrooster.cs" />
+    <Compile Include="CC\VrijwilligerToevoegen.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -435,13 +437,19 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="VrijwilligerToevoegen.aspx.cs">
+      <DependentUpon>VrijwilligerToevoegen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VrijwilligerToevoegen.aspx.designer.cs">
+      <DependentUpon>VrijwilligerToevoegen.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Werkrooster.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="CC\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

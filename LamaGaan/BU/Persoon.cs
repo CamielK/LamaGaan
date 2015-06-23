@@ -14,6 +14,15 @@ namespace LamaGaan.BU
         //    this.
         //}
 
+        public void AddPersoon()
+        {
+            //methode die door CC aangeroepen word om nieuwe persoon toe te voegen.
+        }
+
+
+        
+
+        //test methode:
         public List<string> GetPersoon()
         {
             List<string> namen = new List<string>();
@@ -36,6 +45,11 @@ namespace LamaGaan.BU
 
             return namen;
         }
+
+
+
+
+        
 
     }
 }
