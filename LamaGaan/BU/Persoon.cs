@@ -25,7 +25,7 @@ namespace LamaGaan.BU
 
                 IQueryable<Persoon> naamQuery =
                     from naam in context.Persoon
-                    where naam.Id == 1
+                    where naam.Id > 0
                     select naam;
 
                 foreach (Persoon naam in naamQuery)
