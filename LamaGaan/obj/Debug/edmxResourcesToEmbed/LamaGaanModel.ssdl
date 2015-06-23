@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LamaGaanModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="LamaGaanModelStoreContainer">
+    <EntitySet Name="Werkrooster" EntityType="LamaGaanModel.Store.Werkrooster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Taak" EntityType="LamaGaanModel.Store.Taak" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Dier" EntityType="LamaGaanModel.Store.Dier" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Product" EntityType="LamaGaanModel.Store.Product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Persoon" EntityType="LamaGaanModel.Store.Persoon" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VerkoopOrderSet" EntityType="LamaGaanModel.Store.VerkoopOrderSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PersoonWerkrooster" Association="LamaGaanModel.Store.PersoonWerkrooster">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="Werkrooster" EntitySet="Werkrooster" />
+    </AssociationSet>
+    <AssociationSet Name="TaakWerkrooster" Association="LamaGaanModel.Store.TaakWerkrooster">
+      <End Role="Taak" EntitySet="Taak" />
+      <End Role="Werkrooster" EntitySet="Werkrooster" />
+    </AssociationSet>
+    <AssociationSet Name="DierTaak" Association="LamaGaanModel.Store.DierTaak">
+      <End Role="Dier" EntitySet="Dier" />
+      <End Role="Taak" EntitySet="Taak" />
+    </AssociationSet>
+    <AssociationSet Name="ProductDier" Association="LamaGaanModel.Store.ProductDier">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Dier" EntitySet="Dier" />
+    </AssociationSet>
+    <AssociationSet Name="ProductVerkoopOrder" Association="LamaGaanModel.Store.ProductVerkoopOrder">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="VerkoopOrder" EntitySet="VerkoopOrderSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Werkrooster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersoonId" Type="int" Nullable="false" />
+    <Property Name="Datum" Type="datetime" Nullable="false" />
+    <Property Name="BeginTijd" Type="time" Nullable="false" />
+    <Property Name="EindTijd" Type="time" Nullable="false" />
+    <Property Name="TaakId" Type="int" Nullable="false" />
+    <Property Name="Persoon_Id" Type="int" Nullable="false" />
+    <Property Name="Taak_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Taak">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Omschrijving" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DierId" Type="int" Nullable="false" />
+    <Property Name="Dier_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DierNaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DierSoort" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GeboorteDatum" Type="datetime" Nullable="false" />
+    <Property Name="VoerProductId" Type="int" Nullable="false" />
+    <Property Name="Product_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MaxVoorraad" Type="int" Nullable="true" />
+    <Property Name="HuidigeVoorraad" Type="int" Nullable="true" />
+    <Property Name="VerkoopPrijs" Type="int" Nullable="true" />
+    <Property Name="InkoopPrijs" Type="int" Nullable="true" />
+    <Property Name="MinVoorraad" Type="int" Nullable="true" />
+    <Property Name="InkoopWinkel" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persoon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Wachtwoord" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefoonnummer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Woonplaats" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Postcode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Straatnaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Huisnummer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Startdatum" Type="datetime" Nullable="false" />
+    <Property Name="Vergoeding" Type="int" Nullable="false" />
+    <Property Name="Functie" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GeboorteDatum" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VerkoopOrderSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Datum" Type="datetime" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="Aantal" Type="int" Nullable="false" />
+    <Property Name="TotaalPrijs" Type="int" Nullable="false" />
+    <Property Name="Product_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="PersoonWerkrooster">
+    <End Role="Persoon" Type="LamaGaanModel.Store.Persoon" Multiplicity="1" />
+    <End Role="Werkrooster" Type="LamaGaanModel.Store.Werkrooster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Werkrooster">
+        <PropertyRef Name="Persoon_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TaakWerkrooster">
+    <End Role="Taak" Type="LamaGaanModel.Store.Taak" Multiplicity="1" />
+    <End Role="Werkrooster" Type="LamaGaanModel.Store.Werkrooster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Taak">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Werkrooster">
+        <PropertyRef Name="Taak_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DierTaak">
+    <End Role="Dier" Type="LamaGaanModel.Store.Dier" Multiplicity="1" />
+    <End Role="Taak" Type="LamaGaanModel.Store.Taak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Taak">
+        <PropertyRef Name="Dier_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductDier">
+    <End Role="Product" Type="LamaGaanModel.Store.Product" Multiplicity="1" />
+    <End Role="Dier" Type="LamaGaanModel.Store.Dier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Dier">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductVerkoopOrder">
+    <End Role="Product" Type="LamaGaanModel.Store.Product" Multiplicity="1" />
+    <End Role="VerkoopOrder" Type="LamaGaanModel.Store.VerkoopOrderSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VerkoopOrder">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

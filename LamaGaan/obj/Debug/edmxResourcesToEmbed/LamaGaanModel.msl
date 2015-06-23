@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LamaGaanModelStoreContainer" CdmEntityContainer="LamaGaanModelContainer">
+    <EntitySetMapping Name="Werkrooster">
+      <EntityTypeMapping TypeName="IsTypeOf(LamaGaan.BU.Werkrooster)">
+        <MappingFragment StoreEntitySet="Werkrooster">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PersoonId" ColumnName="PersoonId" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="BeginTijd" ColumnName="BeginTijd" />
+          <ScalarProperty Name="EindTijd" ColumnName="EindTijd" />
+          <ScalarProperty Name="TaakId" ColumnName="TaakId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Taak">
+      <EntityTypeMapping TypeName="IsTypeOf(LamaGaan.BU.Taak)">
+        <MappingFragment StoreEntitySet="Taak">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Omschrijving" ColumnName="Omschrijving" />
+          <ScalarProperty Name="DierId" ColumnName="DierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dier">
+      <EntityTypeMapping TypeName="IsTypeOf(LamaGaan.BU.Dier)">
+        <MappingFragment StoreEntitySet="Dier">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DierNaam" ColumnName="DierNaam" />
+          <ScalarProperty Name="DierSoort" ColumnName="DierSoort" />
+          <ScalarProperty Name="GeboorteDatum" ColumnName="GeboorteDatum" />
+          <ScalarProperty Name="VoerProductId" ColumnName="VoerProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="IsTypeOf(LamaGaan.BU.Product)">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="MaxVoorraad" ColumnName="MaxVoorraad" />
+          <ScalarProperty Name="HuidigeVoorraad" ColumnName="HuidigeVoorraad" />
+          <ScalarProperty Name="VerkoopPrijs" ColumnName="VerkoopPrijs" />
+          <ScalarProperty Name="InkoopPrijs" ColumnName="InkoopPrijs" />
+          <ScalarProperty Name="MinVoorraad" ColumnName="MinVoorraad" />
+          <ScalarProperty Name="InkoopWinkel" ColumnName="InkoopWinkel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Persoon">
+      <EntityTypeMapping TypeName="IsTypeOf(LamaGaan.BU.Persoon)">
+        <MappingFragment StoreEntitySet="Persoon">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Wachtwoord" ColumnName="Wachtwoord" />
+          <ScalarProperty Name="Telefoonnummer" ColumnName="Telefoonnummer" />
+          <ScalarProperty Name="Woonplaats" ColumnName="Woonplaats" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="Straatnaam" ColumnName="Straatnaam" />
+          <ScalarProperty Name="Huisnummer" ColumnName="Huisnummer" />
+          <ScalarProperty Name="Startdatum" ColumnName="Startdatum" />
+          <ScalarProperty Name="Vergoeding" ColumnName="Vergoeding" />
+          <ScalarProperty Name="Functie" ColumnName="Functie" />
+          <ScalarProperty Name="GeboorteDatum" ColumnName="GeboorteDatum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VerkoopOrderSet">
+      <EntityTypeMapping TypeName="IsTypeOf(LamaGaan.BU.VerkoopOrder)">
+        <MappingFragment StoreEntitySet="VerkoopOrderSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Aantal" ColumnName="Aantal" />
+          <ScalarProperty Name="TotaalPrijs" ColumnName="TotaalPrijs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PersoonWerkrooster" TypeName="LamaGaan.BU.PersoonWerkrooster" StoreEntitySet="Werkrooster">
+      <EndProperty Name="Persoon">
+        <ScalarProperty Name="Id" ColumnName="Persoon_Id" />
+      </EndProperty>
+      <EndProperty Name="Werkrooster">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TaakWerkrooster" TypeName="LamaGaan.BU.TaakWerkrooster" StoreEntitySet="Werkrooster">
+      <EndProperty Name="Taak">
+        <ScalarProperty Name="Id" ColumnName="Taak_Id" />
+      </EndProperty>
+      <EndProperty Name="Werkrooster">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DierTaak" TypeName="LamaGaan.BU.DierTaak" StoreEntitySet="Taak">
+      <EndProperty Name="Dier">
+        <ScalarProperty Name="Id" ColumnName="Dier_Id" />
+      </EndProperty>
+      <EndProperty Name="Taak">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductDier" TypeName="LamaGaan.BU.ProductDier" StoreEntitySet="Dier">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Product_Id" />
+      </EndProperty>
+      <EndProperty Name="Dier">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductVerkoopOrder" TypeName="LamaGaan.BU.ProductVerkoopOrder" StoreEntitySet="VerkoopOrderSet">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Product_Id" />
+      </EndProperty>
+      <EndProperty Name="VerkoopOrder">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

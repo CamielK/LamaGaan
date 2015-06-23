@@ -11,5 +11,10 @@ namespace LamaGaan.BU
         //{
         //    this.
         //}
+
+        public void WerkroosterToevoegen()
+        {
+            
+        }
     }
 }
