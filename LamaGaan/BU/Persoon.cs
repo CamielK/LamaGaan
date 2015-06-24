@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
 using System.Web;
-using Microsoft.Ajax.Utilities;
 
 namespace LamaGaan.BU
 {
@@ -19,8 +18,6 @@ namespace LamaGaan.BU
             //methode die door CC aangeroepen word om nieuwe persoon toe te voegen.
         }
 
-
-        
 
         //test methode:
         public List<string> GetPersoon()

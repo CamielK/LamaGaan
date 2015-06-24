@@ -14,8 +14,8 @@ namespace LamaGaan.CC
         public VrijwilligerToevoegen()
         {
             //roep BU methodes aan om de informatie uit de gevulde dictionary met persoonsgegevens op te slaan in de database.
-            
-            
+
+
             //nieuwePersoon.Naam = 
         }
 

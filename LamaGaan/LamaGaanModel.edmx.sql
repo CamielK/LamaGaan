@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/23/2015 17:15:38
--- Generated from EDMX file: F:\bestanden\LamaGaan\LamaGaan\LamaGaanModel.edmx
+-- Date Created: 06/24/2015 19:37:00
+-- Generated from EDMX file: F:\bestanden\test\LamaGaan\LamaGaan\LamaGaanModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [LamaGaanDB];
+USE [LamaGaanDatabase];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO

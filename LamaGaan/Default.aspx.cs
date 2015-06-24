@@ -8,7 +8,7 @@ using LamaGaan.BU;
 
 namespace LamaGaan
 {
-    public partial class _Default : Page
+    public partial class Default : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

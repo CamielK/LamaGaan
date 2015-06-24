@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.WebSockets;
 
 namespace LamaGaan
 {
@@ -19,7 +17,6 @@ namespace LamaGaan
         }
 
 
-
         //input uit tekstvelden opslaan in een dictionary
         //dictionary vullen met persoon attrbituren. naam, geboortedatum, adres etc.
         protected void BtOpslaan_Click(object sender, EventArgs e)
@@ -30,10 +27,5 @@ namespace LamaGaan
 
             cc.FillPersonDictionary(persoon);
         }
-
-        
-
-        
-
     }
 }
