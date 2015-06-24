@@ -6,9 +6,6 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
     </style>
 </head>
 <body>
