@@ -67,7 +67,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="LamaGaanModel.edmx.sql" />
-    <Content Include="VrijwilligerToevoegen.aspx" />
+    <Content Include="VrijwilligersBeheren.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -77,7 +77,7 @@
     <Compile Include="BU\Taak.cs" />
     <Compile Include="BU\VerkoopOrder.cs" />
     <Compile Include="BU\Werkrooster.cs" />
-    <Compile Include="CC\VrijwilligerToevoegen.cs" />
+    <Compile Include="CC\CCVrijwilligersBeheren.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -116,12 +116,12 @@
     <Compile Include="VerkoopOrder.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="VrijwilligerToevoegen.aspx.cs">
-      <DependentUpon>VrijwilligerToevoegen.aspx</DependentUpon>
+    <Compile Include="VrijwilligersBeheren.aspx.cs">
+      <DependentUpon>VrijwilligersBeheren.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VrijwilligerToevoegen.aspx.designer.cs">
-      <DependentUpon>VrijwilligerToevoegen.aspx</DependentUpon>
+    <Compile Include="VrijwilligersBeheren.aspx.designer.cs">
+      <DependentUpon>VrijwilligersBeheren.aspx</DependentUpon>
     </Compile>
     <Compile Include="Werkrooster.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>

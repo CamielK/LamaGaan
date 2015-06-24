@@ -1,45 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Web;
+using LamaGaan.BU;
 
-namespace LamaGaan.BU
+namespace LamaGaan.CC
 {
-    partial class Persoon
+    public class CCVrijwilligersBeheren
     {
-        //public void test()
-        //{
-        //    this.
-        //}
-
-        public void AddPersoon()
-        {
-            //methode die door CC aangeroepen word om nieuwe persoon toe te voegen.
-        }
+        private Persoon nieuwePersoon = new Persoon();
 
 
-        
 
-        //test methode:
         //geeft een list met strings van alle namen van de personen in Persoon
         public List<string> GetAllPersoonNamen()
         {
-            List<string> namen = new List<string>();
-
-            using (LamaGaanModelContainer context = new LamaGaanModelContainer())
-            {
-                IQueryable<Persoon> naamQuery =
-                    from naam in context.Persoon
-                    select naam;
-
-                foreach (Persoon naam in naamQuery)
-                {
-                    namen.Add(naam.Naam.ToString());
-                }
-            }
+            List<string> namen = new Persoon().GetAllPersoonNamen();
             return namen;
         }
 
@@ -70,9 +47,5 @@ namespace LamaGaan.BU
 
             return persoonDict;
         }
-
-
-        
-
     }
 }
