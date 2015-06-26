@@ -106,36 +106,27 @@ nav
 section#MainContent
 {
   /*
-    Defines the main content area. The #MainContent element has a minimum height of 500 pixels, but can grow if necessary.
-    The font-size is 80% of its parent element, which in this case comes down to 80% of the font
-    the user has specified as the default font in the browser.
+    Defines the main content area.
   */
-  font-size: 0.8em;
-  width: 67%;
-  border-left: 1px solid white;
-  border-right: 2px solid white;
+  width: 65%;
   float: left;
   background-color: #e1e1e1;
-  height: 600px;
+  height: 500px;
   margin-right:9px;
   margin-left:10px;
   margin-bottom:10px;
+  padding: 10px;
 }
 
 aside#Sidebar
 {
   /*
-    The Sidebar is positioned to the right of the MainContent section. It gets the same font-size as the 
-	#MainContent section and gets a background image called Sidebar.jpg. 
-	To ensure the image is visible in (most) browsers on a small page, the element gets a minimum 
-	height of 500px. This is ignored by IE 6.
+    The Sidebar is positioned to the right of the MainContent section.
   */
-  font-size: 0.8em;
   color: White;
-
   background-color: #e1e1e1;
   width: 30%;
-  height: 600px;
+  height: 520px;
   float: left;
   margin-bottom:10px;
 }
@@ -172,14 +163,13 @@ footer
 }
 
 .footer-buttons{
-    color:White;
     float:left;
     display:inline-block;
-    color:#aaa;
-    font-size:medium;
-
-    
+    font-size: medium;
 }
+    .footer-buttons a {
+        color: #aaa;
+    }
 
 .Introduction
 {

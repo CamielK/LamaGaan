@@ -12,9 +12,9 @@ namespace LamaGaan.CC
         private Persoon persoon = new Persoon();
 
         //geeft een list met strings van alle namen van de personen in Persoon
-        public List<string> GetAllPersoonNamen()
+        public List<string>[] GetAllPersoonNamen()
         {
-            List<string> namen = persoon.GetAllPersoonNamen();
+            List<string>[] namen = persoon.GetAllPersoonNamen();
             return namen;
         }
 

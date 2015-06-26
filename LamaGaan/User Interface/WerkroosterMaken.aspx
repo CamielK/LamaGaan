@@ -9,9 +9,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent" runat="server">
-    <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+    Op deze pagina kunt u een nieuw werkrooster aanmaken.<br />Gebruik het formulier en doorloop de stappen.<br /><br />
+    Selecteer de datum waarvoor u een werkrooster wilt toevoegen: <br />
+    Selecteer de vrijwilliger voor dit werkrooster: <asp:DropDownList ID="DropDownListNamen" runat="server"></asp:DropDownList><br />
+    <asp:Button ID="BtAanmaken" runat="server" Text="Werkrooster aanmaken" OnClick="BtAanmaken_Click" />
     <br />
-    <asp:Button ID="BtZoekpersoon" runat="server" Text="zoek persoon" OnClick="BtZoekpersoon_Click" />
     <br />
     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 </asp:Content>

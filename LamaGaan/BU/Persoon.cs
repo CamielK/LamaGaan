@@ -23,11 +23,12 @@ namespace LamaGaan.BU
 
         
 
-        //test methode:
-        //geeft een list met strings van alle namen van de personen in Persoon
-        public List<string> GetAllPersoonNamen()
+        //geeft een list met strings van alle namen van de personen in Persoon en hun bijbehorende persoon Id
+        public List<string>[] GetAllPersoonNamen()
         {
-            List<string> namen = new List<string>();
+            List<string>[] namen = new List<string>[2];
+            namen[0] = new List<string>();//eerste list vullen met persoon ID
+            namen[1] = new List<string>();//tweede list vullen met persoon naam
 
             using (LamaGaanModelContainer context = new LamaGaanModelContainer())
             {
@@ -37,14 +38,19 @@ namespace LamaGaan.BU
 
                 foreach (Persoon naam in naamQuery)
                 {
-                    namen.Add(naam.Naam.ToString());
+                    if (naam != null)
+                    {
+                        namen[0].Add(naam.Id.ToString());
+                        namen[1].Add(naam.Naam.ToString());
+                    }
                 }
             }
             return namen;
         }
 
 
-        //functie geeft een dictionary met daarin alle attributen van de gegeven persoon
+
+        //test functie: geeft een dictionary met daarin alle attributen van de gegeven persoon 
         public Dictionary<string, object> GetPersoonInfo(string naam)
         {
             Dictionary<string, object> persoonDict = new Dictionary<string, object>();

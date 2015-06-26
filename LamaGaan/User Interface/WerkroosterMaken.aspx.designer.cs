@@ -13,22 +13,22 @@ namespace LamaGaan.User_Interface {
     public partial class WerkroosterMaken {
         
         /// <summary>
-        /// DropDownList1 control.
+        /// DropDownListNamen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListNamen;
         
         /// <summary>
-        /// BtZoekpersoon control.
+        /// BtAanmaken control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtZoekpersoon;
+        protected global::System.Web.UI.WebControls.Button BtAanmaken;
         
         /// <summary>
         /// Label1 control.
