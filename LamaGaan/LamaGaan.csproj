@@ -77,6 +77,7 @@
     <Content Include="Style\Images\bg.jpg" />
     <Content Include="Style\Images\Header.png" />
     <Content Include="Style\Images\lamagaanLogo.png" />
+    <Content Include="User Interface\Evenementen.aspx" />
     <Content Include="VrijwilligersBeheren.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -141,6 +142,13 @@
     </Compile>
     <Compile Include="Taak.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\Evenementen.aspx.cs">
+      <DependentUpon>Evenementen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Interface\Evenementen.aspx.designer.cs">
+      <DependentUpon>Evenementen.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerkoopOrder.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>
