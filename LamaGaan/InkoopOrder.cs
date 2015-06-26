@@ -12,14 +12,13 @@ namespace LamaGaan.BU
     using System;
     using System.Collections.Generic;
     
-    public partial class Werkrooster
+    public partial class InkoopOrder
     {
         public int Id { get; set; }
         public System.DateTime Datum { get; set; }
-        public System.TimeSpan BeginTijd { get; set; }
-        public System.TimeSpan EindTijd { get; set; }
+        public int Aantal { get; set; }
+        public int TotaalPrijs { get; set; }
     
-        public virtual Persoon Persoon { get; set; }
-        public virtual Taak Taak { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

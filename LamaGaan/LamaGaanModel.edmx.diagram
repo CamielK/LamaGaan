@@ -5,21 +5,23 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ee87f8696cfc4aa6b6c478a6d75dc1a7" Name="Diagram1" ZoomLevel="82" >
-        <EntityTypeShape EntityType="LamaGaan.BU.Werkrooster" Width="1.5" PointX="8" PointY="1.25" />
-        <EntityTypeShape EntityType="LamaGaan.BU.Taak" Width="1.5" PointX="5.75" PointY="1.25" />
-        <EntityTypeShape EntityType="LamaGaan.BU.Dier" Width="1.5" PointX="3.5" PointY="1.25" />
-        <EntityTypeShape EntityType="LamaGaan.BU.Product" Width="1.5" PointX="1.25" PointY="1.25" />
-        <EntityTypeShape EntityType="LamaGaan.BU.Persoon" Width="1.5" PointX="10.375" PointY="1.25" />
-        <EntityTypeShape EntityType="LamaGaan.BU.VerkoopOrder" Width="1.5" PointX="1.25" PointY="5" />
+        <EntityTypeShape EntityType="LamaGaan.BU.Werkrooster" Width="1.5" PointX="10.5" PointY="0.5" />
+        <EntityTypeShape EntityType="LamaGaan.BU.Taak" Width="1.5" PointX="8.25" PointY="0.5" />
+        <EntityTypeShape EntityType="LamaGaan.BU.Dier" Width="1.5" PointX="6" PointY="0.5" />
+        <EntityTypeShape EntityType="LamaGaan.BU.Product" Width="1.5" PointX="3.625" PointY="0.5" />
+        <EntityTypeShape EntityType="LamaGaan.BU.Persoon" Width="1.5" PointX="12.875" PointY="0.5" />
+        <EntityTypeShape EntityType="LamaGaan.BU.VerkoopOrder" Width="1.5" PointX="3.625" PointY="4.625" />
+        <EntityTypeShape EntityType="LamaGaan.BU.Evenement" Width="1.5" PointX="8.875" PointY="4.625" />
+        <EntityTypeShape EntityType="LamaGaan.BU.Reservering" Width="1.5" PointX="6.25" PointY="4.625" />
         <AssociationConnector Association="LamaGaan.BU.PersoonWerkrooster" />
         <AssociationConnector Association="LamaGaan.BU.TaakWerkrooster" />
         <AssociationConnector Association="LamaGaan.BU.DierTaak" />
         <AssociationConnector Association="LamaGaan.BU.ProductDier" />
         <AssociationConnector Association="LamaGaan.BU.ProductVerkoopOrder" />
-        <EntityTypeShape EntityType="LamaGaan.BU.Evenement" Width="1.5" PointX="6.5" PointY="5.125" />
-        <EntityTypeShape EntityType="LamaGaan.BU.Reservering" Width="1.5" PointX="4.125" PointY="5.125" />
+        <AssociationConnector Association="LamaGaan.BU.ReserveringVerkoopOrder" />
         <AssociationConnector Association="LamaGaan.BU.EvenementReservering" />
-        <AssociationConnector Association="LamaGaan.BU.VerkoopOrderReservering" />
+        <EntityTypeShape EntityType="LamaGaan.BU.InkoopOrder" Width="1.5" PointX="1.25" PointY="0.5" />
+        <AssociationConnector Association="LamaGaan.BU.ProductInkoopOrder" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

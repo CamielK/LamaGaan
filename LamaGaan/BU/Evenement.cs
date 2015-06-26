@@ -25,7 +25,7 @@ namespace LamaGaan.BU
                         eventDictionary.Add("Naam", Naam);
                         eventDictionary.Add("Soort", Soort);
                         eventDictionary.Add("Datum", Datum);
-                        eventDictionary.Add("AantalPersonen", AantalPersonen);
+                        eventDictionary.Add("AantalPersonen", MaxAantalPersonen);
                         eventDictionary.Add("Korting", Korting);
                     }
 

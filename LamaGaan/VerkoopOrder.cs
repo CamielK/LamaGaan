@@ -16,7 +16,6 @@ namespace LamaGaan.BU
     {
         public int Id { get; set; }
         public System.DateTime Datum { get; set; }
-        public int ProductId { get; set; }
         public int Aantal { get; set; }
         public int TotaalPrijs { get; set; }
     

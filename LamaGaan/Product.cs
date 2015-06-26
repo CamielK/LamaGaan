@@ -18,6 +18,7 @@ namespace LamaGaan.BU
         {
             this.Dier = new HashSet<Dier>();
             this.VerkoopOrder = new HashSet<VerkoopOrder>();
+            this.InkoopOrder = new HashSet<InkoopOrder>();
         }
     
         public int Id { get; set; }
@@ -31,5 +32,6 @@ namespace LamaGaan.BU
     
         public virtual ICollection<Dier> Dier { get; set; }
         public virtual ICollection<VerkoopOrder> VerkoopOrder { get; set; }
+        public virtual ICollection<InkoopOrder> InkoopOrder { get; set; }
     }
 }

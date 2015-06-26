@@ -21,7 +21,6 @@ namespace LamaGaan.BU
     
         public int Id { get; set; }
         public string Omschrijving { get; set; }
-        public int DierId { get; set; }
     
         public virtual ICollection<Werkrooster> Werkrooster { get; set; }
         public virtual Dier Dier { get; set; }
