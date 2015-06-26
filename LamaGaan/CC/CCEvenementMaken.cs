@@ -12,6 +12,8 @@ namespace LamaGaan.CC
         {
             Evenement allEvenement = new Evenement();
             List<string> namenList = allEvenement.GetAllEvents();
+
+            return namenList;
         } 
     }
 }

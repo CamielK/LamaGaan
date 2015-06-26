@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VrijwilligersBeheren.aspx.cs" Inherits="LamaGaan.VrijwilligerToevoegen" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WerkroosterMaken.aspx.cs" Inherits="LamaGaan.VrijwilligerToevoegen" %>
 
 <!DOCTYPE html>
 
