@@ -1,18 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="LamaGaan.Default" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <style type="text/css">
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        
-    </div>
-    </form>
-</body>
-</html>
+﻿<%@ Page Title="Default pagina" Language="C#" MasterPageFile="~/MasterPages/LamaGaan.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="LamaGaan.Default" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent" runat="server">
+    default page
+</asp:Content>

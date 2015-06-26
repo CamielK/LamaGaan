@@ -69,8 +69,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="LamaGaanModel.edmx.sql" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Style\Default.css" />
+    <Content Include="Style\Images\bg.jpg" />
+    <Content Include="Style\Images\Header.png" />
+    <Content Include="Style\Images\lamagaanLogo.png" />
     <Content Include="VrijwilligersBeheren.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -115,6 +121,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LamaGaanModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\LamaGaan.Master.cs">
+      <DependentUpon>LamaGaan.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\LamaGaan.Master.designer.cs">
+      <DependentUpon>LamaGaan.Master</DependentUpon>
     </Compile>
     <Compile Include="Persoon.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>
@@ -165,12 +178,14 @@
       <CustomToolNamespace>LamaGaan.BU</CustomToolNamespace>
     </Content>
     <Content Include="packages.config" />
+    <Content Include="MasterPages\LamaGaan.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
