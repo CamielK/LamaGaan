@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LamaGaan.master.cs" Inherits="LamaGaan.MasterPages.LamaGaan" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../Style/Default.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="PageWrapper">
+            <header><a href="/"></a></header>
+            <nav>
+                <asp:Menu ID="Menu1" runat="server" CssClass="MainMenu" Orientation="Horizontal" StaticEnableDefaultPopOutImage="False" DataSourceID="SiteMapDataSource1"></asp:Menu>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+            </nav>
+            <section id="MainContent">
+                <asp:ContentPlaceHolder ID="cpMainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+            <aside id="Sidebar"></aside>
+            <footer id="footer-bottom">
+                <div>
+                    <p>
+                        <span class="copyright"><span style="color:#aaa;">&copy; 2015</span> Kinderboerderij "Lama gaan" <span style="color: #aaa;"> All rights reserved.</span></span>
+                        <span class="footer-buttons"><a href="#">
+                        &nbsp;Home |</a>
+                        <a href="#">Inloggen |</a>
+                        <a href="#">Contact </a>
+
+                        
+                    </span>
+                    </p>   
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

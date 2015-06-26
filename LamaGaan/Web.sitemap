@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/" title="Home"  description="Home">
+    <siteMapNode url="~/Default.aspx" title="Home"  description="Ga naar de homepage" />
+    <siteMapNode url="~/OverOns/Default.aspx" title="Over ons"  description="Algemene informatie over Lama Gaan">
+      <siteMapNode url="~/OverOns/Algemene Informatie.aspx" title="Algemene Informatie" description="Algemene Informatie van Lama Gaan" />
+      <siteMapNode url="~/OverOns/Entree.aspx" title="Entree" description="Entree tarieven van Lama Gaan" />
+      <siteMapNode url="~/OverOns/Openingstijden.aspx" title="Openingstijden" description="Openingstijden van Lama Gaan" />
+      <siteMapNode url="~/Geschiedenis.aspx" title="Geschiedenis" description="Geschiedenis van Lama Gaan" />
+      <siteMapNode url="~/OverOns/Bestuur.aspx" title="Bestuur" description="Het bestuur van Lama Gaan" />
+      <siteMapNode url="~/OverOns/Dieren.aspx" title="Dieren" description="Alle dieren van Lama Gaan" />
+      <siteMapNode url="~/OverOns/Huisregels.aspx" title="Huisregels" description="Huisregels van Lama Gaan" />
+    </siteMapNode>
+    <siteMapNode url="~/Evenementen/Default.aspx" title="Evenementen"  description="Evenementen pagina">
+      <siteMapNode url="~/Evenementen/Evenement1.aspx" title="Evenement 1" description="Evenement 1" />
+      <siteMapNode url="~/Evenementen/Evenement2.aspx" title="Evenement 2" description="Evenement 2" />
+      <siteMapNode url="~/Evenementen/Evenement3.aspx" title="Evenement 3" description="Evenement 3" />
+    </siteMapNode>
+    <siteMapNode url="~/Kaartjes reserveren.aspx" title="Kaartjes reserveren" description="Kaartjes reserveren voor Lama Gaan" />
+    <siteMapNode url="~/Pony stalling huren.aspx" title="Pony stalling huren" description="Pony stalling huren in Lama Gaan" />
+    <siteMapNode url="~/Contact.aspx" title="Contact"  description="Contact formulier" />
+  </siteMapNode>
+</siteMap>
+
+

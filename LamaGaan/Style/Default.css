@@ -1,0 +1,288 @@
+﻿*
+{
+  /* Zet standaard font */
+  font-family: Arial, Sans-Serif;
+}
+
+body
+{
+  /* verwijdert witte margin gedeelte van body en zet de achtergrondkleur */
+  margin: 0;
+  background-color: whitesmoke;
+  /*background-image: url(Images|bg.jpg);
+  background-repeat: repeat;*/
+}
+
+a
+{
+  /* verwijdert standaard lijn onder link en zet tekstkleur van link items*/
+  text-decoration: none;
+  color: #aaa
+}
+
+  a:hover
+  {
+    /* Underline een link als je erop gaat staan */
+    text-decoration: underline;
+  }
+
+#PageWrapper
+{
+  /*
+    Sets the total width for the entire page. Also sets the background color
+    which is used to fill the background of the Sidebar in case the MainContent section is taller than the Sidebar.
+    Uses margin: auto to center the entire page in the middle of the browser's window.
+  */
+  width: 80%;
+  background-color: #424242;
+  margin: auto;
+}
+
+header
+{
+  /*
+    Gives the header the same width as the PageWrapper. 
+    ruimte voor logo.
+  */
+  background-image: url(Images/lamagaanLogo.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 86px;
+}
+
+  header a
+  {
+    /*
+    The header a is a link nested in header. It provides a link back to the homepage.
+    The size of the link is the same as the header, so the entire header is clickable.
+  */
+    width: 45%;
+    height: 86px;
+    display: block;
+  }
+
+nav
+{
+  /*
+    The menu spans the page width, right below the header.
+    At the top and left a few pixels padding is applied to create some room.
+  */
+  background-image: url(Images/MenuBackground.jpg);
+  width: 100%;
+  height: 36px;
+  padding-top: 7px;
+  padding-left: 10px;
+  padding-right:10px;
+}
+
+  nav a
+  {
+    /*
+    Links in the Menu are white.*/
+    color: #fff;
+  }
+
+.MainMenu
+{
+  /*
+    The Menu gets a white border on all four sides.
+  */
+  border: 1px solid #999999;
+  width: 95%;
+  height: 29px;
+  background-color: #555555;
+  margin-bottom:10px;
+}
+
+  .MainMenu ul li
+  {
+    /*
+    Gives the four menu items in the main menu a width of 200px each.
+  */
+    width: 170px;
+  }
+
+section#MainContent
+{
+  /*
+    Defines the main content area. The #MainContent element has a minimum height of 500 pixels, but can grow if necessary.
+    The font-size is 80% of its parent element, which in this case comes down to 80% of the font
+    the user has specified as the default font in the browser.
+  */
+  font-size: 0.8em;
+  width: 66%;
+  border-left: 1px solid white;
+  border-right: 2px solid white;
+  float: left;
+  background-color: #e1e1e1;
+  height: 600px;
+  margin-right:5px;
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+aside#Sidebar
+{
+  /*
+    The Sidebar is positioned to the right of the MainContent section. It gets the same font-size as the 
+	#MainContent section and gets a background image called Sidebar.jpg. 
+	To ensure the image is visible in (most) browsers on a small page, the element gets a minimum 
+	height of 500px. This is ignored by IE 6.
+  */
+  font-size: 0.8em;
+  color: White;
+
+  background-color: #e1e1e1;
+  width: 30%;
+  height: 600px;
+  float: left;
+  margin-bottom:10px;
+}
+
+#bottom-container{
+    width: 100%;
+    height:50px;
+    background-color:#4c4c4c;
+}
+
+footer
+{
+  /*
+    The footer is positioned below all other content (yet still within PageWrapper).
+    clear: both is used to clear the impact of the float properties used for #MainContent and #Sidebar.
+  */
+  width: 100%;
+  clear: both;
+  height: 50px;
+  background-color: #4c4c4c;  text-align: left;
+  font-size: 0.7em;
+  font-weight: bold;
+  line-height: 37px;
+}
+
+
+.copyright{
+    color:white;
+    display:inline-block;
+    float:left;
+    margin-left:10px;
+    width:80%;
+    font-size:small;
+}
+
+.footer-buttons{
+    color:White;
+    float:left;
+    display:inline-block;
+    color:#aaa;
+    font-size:medium;
+
+    
+}
+
+.Introduction
+{
+  font-style: italic;
+  color: #3e3e3e;
+}
+
+.aspNetDisabled
+{
+  color: grey;
+}
+
+.MyButton
+{
+  color: White;
+}
+
+ul.level1
+{
+  /* Defines the appearance of main menu items. */
+  font-size: 14px;
+  font-weight: bold;
+  height: 29px;
+  line-height: 29px;
+}
+
+  ul.level1 .selected
+  {
+    /* Defines the appearance of active menu items. */
+    background-color: #424242;
+  }
+
+a.level1
+{
+  /* Adds some white space to the left of the main menu item text.
+    !important is used to overrule the in-line CSS that the menu generates */
+  padding-left: 5px !important;
+}
+
+a.level2
+{
+  /* Defines the appearance of the sub menu items. */
+  background-color: #424242 ;
+  padding-left: 8px;
+}
+
+  a.level1:hover, a.level2:hover
+  {
+    /* Defines the hover style for the main and sub items. */
+    background-color: #424242;
+  }
+
+img
+{
+  border: 0;
+}
+
+
+
+
+
+/* CSS mischa
+    
+    
+nav ul {
+	background: #efefef; 
+	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+	padding: 0 20px;
+	border-radius: 10px;  
+	list-style: none;
+	position: relative;
+	display: inline-table;
+}
+	nav ul:after {
+		content: ""; clear: both; display: block;
+	}
+nav ul ul {
+	display: none;
+}
+
+	nav ul li:hover > ul {
+		display: block;
+	}
+
+nav ul li {
+	float: left;
+}
+	nav ul li:hover {
+		background: #4b545f;
+		background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+		background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+		background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);
+	}
+		nav ul li:hover a {
+			color: #fff;
+		}
+	
+	nav ul li a {
+		display: block; padding: 25px 40px;
+		color: #757575; text-decoration: none;
+	}
+
+
+*/
