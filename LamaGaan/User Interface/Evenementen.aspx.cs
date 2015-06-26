@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LamaGaan.BU;
+using LamaGaan.CC;
 
 namespace LamaGaan.User_Interface
 {
@@ -12,7 +13,7 @@ namespace LamaGaan.User_Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Evenement allEvenement = new Evenement();
+            CCEvenementMaken allEvenement = new CCEvenementMaken();
             List<string> namenList = allEvenement.GetAllEvents();
             foreach(string naam in namenList)
             {

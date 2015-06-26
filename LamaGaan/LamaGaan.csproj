@@ -91,6 +91,7 @@
     <Compile Include="BU\Taak.cs" />
     <Compile Include="BU\VerkoopOrder.cs" />
     <Compile Include="BU\Werkrooster.cs" />
+    <Compile Include="CC\CCEvenementMaken.cs" />
     <Compile Include="CC\CCVrijwilligersBeheren.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
