@@ -31,5 +31,7 @@ namespace LamaGaan.BU
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Persoon> Persoon { get; set; }
         public virtual DbSet<VerkoopOrder> VerkoopOrderSet { get; set; }
+        public virtual DbSet<Evenement> Evenement { get; set; }
+        public virtual DbSet<Reservering> Reservering { get; set; }
     }
 }

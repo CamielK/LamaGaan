@@ -77,8 +77,10 @@
   <ItemGroup>
     <Content Include="App_Code\RouteConfig.cs" />
     <Compile Include="BU\Dier.cs" />
+    <Compile Include="BU\Evenement.cs" />
     <Compile Include="BU\Persoon.cs" />
     <Compile Include="BU\Product.cs" />
+    <Compile Include="BU\Reservering.cs" />
     <Compile Include="BU\Taak.cs" />
     <Compile Include="BU\VerkoopOrder.cs" />
     <Compile Include="BU\Werkrooster.cs" />
@@ -91,6 +93,9 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dier.cs">
+      <DependentUpon>LamaGaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Evenement.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -118,6 +123,9 @@
       <DependentUpon>LamaGaanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservering.cs">
+      <DependentUpon>LamaGaanModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Taak.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>
     </Compile>

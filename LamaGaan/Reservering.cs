@@ -12,15 +12,14 @@ namespace LamaGaan.BU
     using System;
     using System.Collections.Generic;
     
-    public partial class VerkoopOrder
+    public partial class Reservering
     {
         public int Id { get; set; }
+        public int EvenementId { get; set; }
+        public string Naam { get; set; }
         public System.DateTime Datum { get; set; }
-        public int ProductId { get; set; }
-        public int Aantal { get; set; }
-        public int TotaalPrijs { get; set; }
     
-        public virtual Product Product { get; set; }
-        public virtual Reservering Reservering { get; set; }
+        public virtual Evenement Evenement { get; set; }
+        public virtual VerkoopOrder VerkoopOrder { get; set; }
     }
 }

@@ -12,15 +12,20 @@ namespace LamaGaan.BU
     using System;
     using System.Collections.Generic;
     
-    public partial class VerkoopOrder
+    public partial class Evenement
     {
-        public int Id { get; set; }
-        public System.DateTime Datum { get; set; }
-        public int ProductId { get; set; }
-        public int Aantal { get; set; }
-        public int TotaalPrijs { get; set; }
+        public Evenement()
+        {
+            this.Reservering = new HashSet<Reservering>();
+        }
     
-        public virtual Product Product { get; set; }
-        public virtual Reservering Reservering { get; set; }
+        public int Id { get; set; }
+        public string Naam { get; set; }
+        public string Soort { get; set; }
+        public System.DateTime Datum { get; set; }
+        public int AantalPersonen { get; set; }
+        public string Korting { get; set; }
+    
+        public virtual ICollection<Reservering> Reservering { get; set; }
     }
 }

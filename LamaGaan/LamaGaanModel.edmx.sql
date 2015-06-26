@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/24/2015 19:37:00
--- Generated from EDMX file: F:\bestanden\test\LamaGaan\LamaGaan\LamaGaanModel.edmx
+-- Date Created: 06/26/2015 11:20:05
+-- Generated from EDMX file: D:\Visual Studio\Projects\LamaGaan\LamaGaan\LamaGaanModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,11 +17,56 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_PersoonWerkrooster]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Werkrooster] DROP CONSTRAINT [FK_PersoonWerkrooster];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TaakWerkrooster]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Werkrooster] DROP CONSTRAINT [FK_TaakWerkrooster];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DierTaak]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Taak] DROP CONSTRAINT [FK_DierTaak];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProductDier]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Dier] DROP CONSTRAINT [FK_ProductDier];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProductVerkoopOrder]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[VerkoopOrderSet] DROP CONSTRAINT [FK_ProductVerkoopOrder];
+GO
+IF OBJECT_ID(N'[dbo].[FK_EvenementReservering]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Reservering] DROP CONSTRAINT [FK_EvenementReservering];
+GO
+IF OBJECT_ID(N'[dbo].[FK_VerkoopOrderReservering]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Reservering] DROP CONSTRAINT [FK_VerkoopOrderReservering];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Werkrooster]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Werkrooster];
+GO
+IF OBJECT_ID(N'[dbo].[Taak]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Taak];
+GO
+IF OBJECT_ID(N'[dbo].[Dier]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Dier];
+GO
+IF OBJECT_ID(N'[dbo].[Product]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Product];
+GO
+IF OBJECT_ID(N'[dbo].[Persoon]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Persoon];
+GO
+IF OBJECT_ID(N'[dbo].[VerkoopOrderSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[VerkoopOrderSet];
+GO
+IF OBJECT_ID(N'[dbo].[Evenement]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Evenement];
+GO
+IF OBJECT_ID(N'[dbo].[Reservering]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Reservering];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -102,6 +147,28 @@ CREATE TABLE [dbo].[VerkoopOrderSet] (
 );
 GO
 
+-- Creating table 'Evenement'
+CREATE TABLE [dbo].[Evenement] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Naam] nvarchar(max)  NOT NULL,
+    [Soort] nvarchar(max)  NOT NULL,
+    [Datum] datetime  NOT NULL,
+    [AantalPersonen] int  NOT NULL,
+    [Korting] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'Reservering'
+CREATE TABLE [dbo].[Reservering] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [EvenementId] int  NOT NULL,
+    [Naam] nvarchar(max)  NOT NULL,
+    [Datum] datetime  NOT NULL,
+    [Evenement_Id] int  NULL,
+    [VerkoopOrder_Id] int  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -139,6 +206,18 @@ GO
 -- Creating primary key on [Id] in table 'VerkoopOrderSet'
 ALTER TABLE [dbo].[VerkoopOrderSet]
 ADD CONSTRAINT [PK_VerkoopOrderSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Evenement'
+ALTER TABLE [dbo].[Evenement]
+ADD CONSTRAINT [PK_Evenement]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Reservering'
+ALTER TABLE [dbo].[Reservering]
+ADD CONSTRAINT [PK_Reservering]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -219,6 +298,36 @@ GO
 CREATE INDEX [IX_FK_ProductVerkoopOrder]
 ON [dbo].[VerkoopOrderSet]
     ([Product_Id]);
+GO
+
+-- Creating foreign key on [Evenement_Id] in table 'Reservering'
+ALTER TABLE [dbo].[Reservering]
+ADD CONSTRAINT [FK_EvenementReservering]
+    FOREIGN KEY ([Evenement_Id])
+    REFERENCES [dbo].[Evenement]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_EvenementReservering'
+CREATE INDEX [IX_FK_EvenementReservering]
+ON [dbo].[Reservering]
+    ([Evenement_Id]);
+GO
+
+-- Creating foreign key on [VerkoopOrder_Id] in table 'Reservering'
+ALTER TABLE [dbo].[Reservering]
+ADD CONSTRAINT [FK_VerkoopOrderReservering]
+    FOREIGN KEY ([VerkoopOrder_Id])
+    REFERENCES [dbo].[VerkoopOrderSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_VerkoopOrderReservering'
+CREATE INDEX [IX_FK_VerkoopOrderReservering]
+ON [dbo].[Reservering]
+    ([VerkoopOrder_Id]);
 GO
 
 -- --------------------------------------------------

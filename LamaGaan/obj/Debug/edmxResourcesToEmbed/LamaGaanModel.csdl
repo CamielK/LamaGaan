@@ -27,6 +27,16 @@
       <End Role="Product" EntitySet="Product" />
       <End Role="VerkoopOrder" EntitySet="VerkoopOrderSet" />
     </AssociationSet>
+    <EntitySet Name="Evenement" EntityType="LamaGaan.BU.Evenement" />
+    <EntitySet Name="Reservering" EntityType="LamaGaan.BU.Reservering" />
+    <AssociationSet Name="EvenementReservering" Association="LamaGaan.BU.EvenementReservering">
+      <End Role="Evenement" EntitySet="Evenement" />
+      <End Role="Reservering" EntitySet="Reservering" />
+    </AssociationSet>
+    <AssociationSet Name="VerkoopOrderReservering" Association="LamaGaan.BU.VerkoopOrderReservering">
+      <End Role="VerkoopOrder" EntitySet="VerkoopOrderSet" />
+      <End Role="Reservering" EntitySet="Reservering" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Werkrooster">
     <Key>
@@ -34,9 +44,9 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PersoonId" Type="Int32" Nullable="false" />
-    <Property Name="Datum" Type="DateTime" Nullable="false" />
-    <Property Name="BeginTijd" Type="Time" Nullable="false" />
-    <Property Name="EindTijd" Type="Time" Nullable="false" />
+    <Property Name="Datum" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BeginTijd" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EindTijd" Type="Time" Nullable="false" Precision="7" />
     <Property Name="TaakId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Persoon" Relationship="LamaGaan.BU.PersoonWerkrooster" FromRole="Werkrooster" ToRole="Persoon" />
     <NavigationProperty Name="Taak" Relationship="LamaGaan.BU.TaakWerkrooster" FromRole="Werkrooster" ToRole="Taak" />
@@ -46,7 +56,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Omschrijving" Type="String" Nullable="false" />
+    <Property Name="Omschrijving" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="DierId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Werkrooster" Relationship="LamaGaan.BU.TaakWerkrooster" FromRole="Taak" ToRole="Werkrooster" />
     <NavigationProperty Name="Dier" Relationship="LamaGaan.BU.DierTaak" FromRole="Taak" ToRole="Dier" />
@@ -56,9 +66,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DierNaam" Type="String" Nullable="false" />
-    <Property Name="DierSoort" Type="String" Nullable="false" />
-    <Property Name="GeboorteDatum" Type="DateTime" Nullable="false" />
+    <Property Name="DierNaam" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DierSoort" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="GeboorteDatum" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="VoerProductId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Taak" Relationship="LamaGaan.BU.DierTaak" FromRole="Dier" ToRole="Taak" />
     <NavigationProperty Name="Product" Relationship="LamaGaan.BU.ProductDier" FromRole="Dier" ToRole="Product" />
@@ -68,13 +78,13 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Naam" Type="String" Nullable="false" />
+    <Property Name="Naam" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="MaxVoorraad" Type="Int32" Nullable="true" />
     <Property Name="HuidigeVoorraad" Type="Int32" Nullable="true" />
     <Property Name="VerkoopPrijs" Type="Int32" Nullable="true" ConcurrencyMode="None" />
     <Property Name="InkoopPrijs" Type="Int32" Nullable="true" />
     <Property Name="MinVoorraad" Type="Int32" Nullable="true" />
-    <Property Name="InkoopWinkel" Type="String" Nullable="false" />
+    <Property Name="InkoopWinkel" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Dier" Relationship="LamaGaan.BU.ProductDier" FromRole="Product" ToRole="Dier" />
     <NavigationProperty Name="VerkoopOrder" Relationship="LamaGaan.BU.ProductVerkoopOrder" FromRole="Product" ToRole="VerkoopOrder" />
   </EntityType>
@@ -83,18 +93,18 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Naam" Type="String" Nullable="false" />
-    <Property Name="Email" Type="String" Nullable="false" />
-    <Property Name="Wachtwoord" Type="String" Nullable="false" />
-    <Property Name="Telefoonnummer" Type="String" Nullable="false" />
-    <Property Name="Woonplaats" Type="String" Nullable="false" />
-    <Property Name="Postcode" Type="String" Nullable="false" />
-    <Property Name="Straatnaam" Type="String" Nullable="false" />
-    <Property Name="Huisnummer" Type="String" Nullable="false" />
-    <Property Name="Startdatum" Type="DateTime" Nullable="false" />
+    <Property Name="Naam" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Wachtwoord" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Telefoonnummer" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Woonplaats" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Postcode" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Straatnaam" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Huisnummer" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Startdatum" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Vergoeding" Type="Int32" Nullable="false" />
-    <Property Name="Functie" Type="String" Nullable="false" />
-    <Property Name="GeboorteDatum" Type="DateTime" Nullable="false" />
+    <Property Name="Functie" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="GeboorteDatum" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Werkrooster" Relationship="LamaGaan.BU.PersoonWerkrooster" FromRole="Persoon" ToRole="Werkrooster" />
   </EntityType>
   <EntityType Name="VerkoopOrder">
@@ -102,11 +112,12 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Datum" Type="DateTime" Nullable="false" />
+    <Property Name="Datum" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ProductId" Type="Int32" Nullable="false" />
     <Property Name="Aantal" Type="Int32" Nullable="false" />
     <Property Name="TotaalPrijs" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Product" Relationship="LamaGaan.BU.ProductVerkoopOrder" FromRole="VerkoopOrder" ToRole="Product" />
+    <NavigationProperty Name="Reservering" Relationship="LamaGaan.BU.VerkoopOrderReservering" FromRole="VerkoopOrder" ToRole="Reservering" />
   </EntityType>
   <Association Name="PersoonWerkrooster">
     <End Type="LamaGaan.BU.Persoon" Role="Persoon" Multiplicity="1" />
@@ -127,5 +138,36 @@
   <Association Name="ProductVerkoopOrder">
     <End Type="LamaGaan.BU.Product" Role="Product" Multiplicity="1" />
     <End Type="LamaGaan.BU.VerkoopOrder" Role="VerkoopOrder" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Evenement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Naam" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Soort" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Datum" Type="DateTime" Nullable="false" />
+    <Property Name="AantalPersonen" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Reservering" Relationship="LamaGaan.BU.EvenementReservering" FromRole="Evenement" ToRole="Reservering" />
+    <Property Name="Korting" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reservering">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EvenementId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Evenement" Relationship="LamaGaan.BU.EvenementReservering" FromRole="Reservering" ToRole="Evenement" />
+    <NavigationProperty Name="VerkoopOrder" Relationship="LamaGaan.BU.VerkoopOrderReservering" FromRole="Reservering" ToRole="VerkoopOrder" />
+    <Property Name="Naam" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Datum" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <Association Name="EvenementReservering">
+    <End Type="LamaGaan.BU.Evenement" Role="Evenement" Multiplicity="0..1" />
+    <End Type="LamaGaan.BU.Reservering" Role="Reservering" Multiplicity="*" />
+  </Association>
+  <Association Name="VerkoopOrderReservering">
+    <End Type="LamaGaan.BU.VerkoopOrder" Role="VerkoopOrder" Multiplicity="1" />
+    <End Type="LamaGaan.BU.Reservering" Role="Reservering" Multiplicity="0..1" />
   </Association>
 </Schema>

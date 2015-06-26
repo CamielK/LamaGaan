@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="LamaGaanModelStoreContainer" CdmEntityContainer="LamaGaanModelContainer">
+  <EntityContainerMapping StorageEntityContainer="LamaGaanBUStoreContainer" CdmEntityContainer="LamaGaanModelContainer">
     <EntitySetMapping Name="Werkrooster">
       <EntityTypeMapping TypeName="IsTypeOf(LamaGaan.BU.Werkrooster)">
         <MappingFragment StoreEntitySet="Werkrooster">
@@ -77,6 +77,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Evenement">
+      <EntityTypeMapping TypeName="IsTypeOf(LamaGaan.BU.Evenement)">
+        <MappingFragment StoreEntitySet="Evenement">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="Soort" ColumnName="Soort" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="AantalPersonen" ColumnName="AantalPersonen" />
+          <ScalarProperty Name="Korting" ColumnName="Korting" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservering">
+      <EntityTypeMapping TypeName="IsTypeOf(LamaGaan.BU.Reservering)">
+        <MappingFragment StoreEntitySet="Reservering">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EvenementId" ColumnName="EvenementId" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="PersoonWerkrooster" TypeName="LamaGaan.BU.PersoonWerkrooster" StoreEntitySet="Werkrooster">
       <EndProperty Name="Persoon">
         <ScalarProperty Name="Id" ColumnName="Persoon_Id" />
@@ -114,6 +136,23 @@
         <ScalarProperty Name="Id" ColumnName="Product_Id" />
       </EndProperty>
       <EndProperty Name="VerkoopOrder">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EvenementReservering" TypeName="LamaGaan.BU.EvenementReservering" StoreEntitySet="Reservering">
+      <EndProperty Name="Evenement">
+        <ScalarProperty Name="Id" ColumnName="Evenement_Id" />
+      </EndProperty>
+      <EndProperty Name="Reservering">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Evenement_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="VerkoopOrderReservering" TypeName="LamaGaan.BU.VerkoopOrderReservering" StoreEntitySet="Reservering">
+      <EndProperty Name="VerkoopOrder">
+        <ScalarProperty Name="Id" ColumnName="VerkoopOrder_Id" />
+      </EndProperty>
+      <EndProperty Name="Reservering">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

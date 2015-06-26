@@ -1,31 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="LamaGaanModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="LamaGaanModelStoreContainer">
-    <EntitySet Name="Werkrooster" EntityType="LamaGaanModel.Store.Werkrooster" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Taak" EntityType="LamaGaanModel.Store.Taak" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Dier" EntityType="LamaGaanModel.Store.Dier" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Product" EntityType="LamaGaanModel.Store.Product" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Persoon" EntityType="LamaGaanModel.Store.Persoon" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="VerkoopOrderSet" EntityType="LamaGaanModel.Store.VerkoopOrderSet" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="PersoonWerkrooster" Association="LamaGaanModel.Store.PersoonWerkrooster">
+<Schema Namespace="LamaGaan.BU.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="LamaGaanBUStoreContainer">
+    <EntitySet Name="Werkrooster" EntityType="LamaGaan.BU.Store.Werkrooster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Taak" EntityType="LamaGaan.BU.Store.Taak" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Dier" EntityType="LamaGaan.BU.Store.Dier" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Product" EntityType="LamaGaan.BU.Store.Product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Persoon" EntityType="LamaGaan.BU.Store.Persoon" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VerkoopOrderSet" EntityType="LamaGaan.BU.Store.VerkoopOrderSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Evenement" EntityType="LamaGaan.BU.Store.Evenement" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reservering" EntityType="LamaGaan.BU.Store.Reservering" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PersoonWerkrooster" Association="LamaGaan.BU.Store.PersoonWerkrooster">
       <End Role="Persoon" EntitySet="Persoon" />
       <End Role="Werkrooster" EntitySet="Werkrooster" />
     </AssociationSet>
-    <AssociationSet Name="TaakWerkrooster" Association="LamaGaanModel.Store.TaakWerkrooster">
+    <AssociationSet Name="TaakWerkrooster" Association="LamaGaan.BU.Store.TaakWerkrooster">
       <End Role="Taak" EntitySet="Taak" />
       <End Role="Werkrooster" EntitySet="Werkrooster" />
     </AssociationSet>
-    <AssociationSet Name="DierTaak" Association="LamaGaanModel.Store.DierTaak">
+    <AssociationSet Name="DierTaak" Association="LamaGaan.BU.Store.DierTaak">
       <End Role="Dier" EntitySet="Dier" />
       <End Role="Taak" EntitySet="Taak" />
     </AssociationSet>
-    <AssociationSet Name="ProductDier" Association="LamaGaanModel.Store.ProductDier">
+    <AssociationSet Name="ProductDier" Association="LamaGaan.BU.Store.ProductDier">
       <End Role="Product" EntitySet="Product" />
       <End Role="Dier" EntitySet="Dier" />
     </AssociationSet>
-    <AssociationSet Name="ProductVerkoopOrder" Association="LamaGaanModel.Store.ProductVerkoopOrder">
+    <AssociationSet Name="ProductVerkoopOrder" Association="LamaGaan.BU.Store.ProductVerkoopOrder">
       <End Role="Product" EntitySet="Product" />
       <End Role="VerkoopOrder" EntitySet="VerkoopOrderSet" />
+    </AssociationSet>
+    <AssociationSet Name="EvenementReservering" Association="LamaGaan.BU.Store.EvenementReservering">
+      <End Role="Evenement" EntitySet="Evenement" />
+      <End Role="Reservering" EntitySet="Reservering" />
+    </AssociationSet>
+    <AssociationSet Name="VerkoopOrderReservering" Association="LamaGaan.BU.Store.VerkoopOrderReservering">
+      <End Role="VerkoopOrder" EntitySet="VerkoopOrderSet" />
+      <End Role="Reservering" EntitySet="Reservering" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Werkrooster">
@@ -35,8 +45,8 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PersoonId" Type="int" Nullable="false" />
     <Property Name="Datum" Type="datetime" Nullable="false" />
-    <Property Name="BeginTijd" Type="time" Nullable="false" />
-    <Property Name="EindTijd" Type="time" Nullable="false" />
+    <Property Name="BeginTijd" Type="time" Nullable="false" Precision="7" />
+    <Property Name="EindTijd" Type="time" Nullable="false" Precision="7" />
     <Property Name="TaakId" Type="int" Nullable="false" />
     <Property Name="Persoon_Id" Type="int" Nullable="false" />
     <Property Name="Taak_Id" Type="int" Nullable="false" />
@@ -103,9 +113,31 @@
     <Property Name="TotaalPrijs" Type="int" Nullable="false" />
     <Property Name="Product_Id" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Evenement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Soort" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Datum" Type="datetime" Nullable="false" />
+    <Property Name="AantalPersonen" Type="int" Nullable="false" />
+    <Property Name="Korting" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reservering">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EvenementId" Type="int" Nullable="false" />
+    <Property Name="Naam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Datum" Type="datetime" Nullable="false" />
+    <Property Name="Evenement_Id" Type="int" Nullable="true" />
+    <Property Name="VerkoopOrder_Id" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="PersoonWerkrooster">
-    <End Role="Persoon" Type="LamaGaanModel.Store.Persoon" Multiplicity="1" />
-    <End Role="Werkrooster" Type="LamaGaanModel.Store.Werkrooster" Multiplicity="*" />
+    <End Role="Persoon" Type="LamaGaan.BU.Store.Persoon" Multiplicity="1" />
+    <End Role="Werkrooster" Type="LamaGaan.BU.Store.Werkrooster" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Persoon">
         <PropertyRef Name="Id" />
@@ -116,8 +148,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="TaakWerkrooster">
-    <End Role="Taak" Type="LamaGaanModel.Store.Taak" Multiplicity="1" />
-    <End Role="Werkrooster" Type="LamaGaanModel.Store.Werkrooster" Multiplicity="*" />
+    <End Role="Taak" Type="LamaGaan.BU.Store.Taak" Multiplicity="1" />
+    <End Role="Werkrooster" Type="LamaGaan.BU.Store.Werkrooster" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Taak">
         <PropertyRef Name="Id" />
@@ -128,8 +160,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="DierTaak">
-    <End Role="Dier" Type="LamaGaanModel.Store.Dier" Multiplicity="1" />
-    <End Role="Taak" Type="LamaGaanModel.Store.Taak" Multiplicity="*" />
+    <End Role="Dier" Type="LamaGaan.BU.Store.Dier" Multiplicity="1" />
+    <End Role="Taak" Type="LamaGaan.BU.Store.Taak" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Dier">
         <PropertyRef Name="Id" />
@@ -140,8 +172,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="ProductDier">
-    <End Role="Product" Type="LamaGaanModel.Store.Product" Multiplicity="1" />
-    <End Role="Dier" Type="LamaGaanModel.Store.Dier" Multiplicity="*" />
+    <End Role="Product" Type="LamaGaan.BU.Store.Product" Multiplicity="1" />
+    <End Role="Dier" Type="LamaGaan.BU.Store.Dier" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Product">
         <PropertyRef Name="Id" />
@@ -152,14 +184,38 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="ProductVerkoopOrder">
-    <End Role="Product" Type="LamaGaanModel.Store.Product" Multiplicity="1" />
-    <End Role="VerkoopOrder" Type="LamaGaanModel.Store.VerkoopOrderSet" Multiplicity="*" />
+    <End Role="Product" Type="LamaGaan.BU.Store.Product" Multiplicity="1" />
+    <End Role="VerkoopOrder" Type="LamaGaan.BU.Store.VerkoopOrderSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Product">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="VerkoopOrder">
         <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EvenementReservering">
+    <End Role="Evenement" Type="LamaGaan.BU.Store.Evenement" Multiplicity="0..1" />
+    <End Role="Reservering" Type="LamaGaan.BU.Store.Reservering" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evenement">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reservering">
+        <PropertyRef Name="Evenement_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VerkoopOrderReservering">
+    <End Role="VerkoopOrder" Type="LamaGaan.BU.Store.VerkoopOrderSet" Multiplicity="1" />
+    <End Role="Reservering" Type="LamaGaan.BU.Store.Reservering" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VerkoopOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reservering">
+        <PropertyRef Name="VerkoopOrder_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

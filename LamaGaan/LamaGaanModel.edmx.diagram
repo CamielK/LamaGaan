@@ -16,6 +16,10 @@
         <AssociationConnector Association="LamaGaan.BU.DierTaak" />
         <AssociationConnector Association="LamaGaan.BU.ProductDier" />
         <AssociationConnector Association="LamaGaan.BU.ProductVerkoopOrder" />
+        <EntityTypeShape EntityType="LamaGaan.BU.Evenement" Width="1.5" PointX="6.5" PointY="5.125" />
+        <EntityTypeShape EntityType="LamaGaan.BU.Reservering" Width="1.5" PointX="4.125" PointY="5.125" />
+        <AssociationConnector Association="LamaGaan.BU.EvenementReservering" />
+        <AssociationConnector Association="LamaGaan.BU.VerkoopOrderReservering" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
