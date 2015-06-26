@@ -7,7 +7,7 @@ using LamaGaan.BU;
 
 namespace LamaGaan.CC
 {
-    public class CCVrijwilligersBeheren
+    public class CCWerkroosterMaken
     {
         private Persoon persoon = new Persoon();
 

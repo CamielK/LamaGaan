@@ -92,7 +92,7 @@
     <Compile Include="BU\VerkoopOrder.cs" />
     <Compile Include="BU\Werkrooster.cs" />
     <Compile Include="CC\CCEvenementMaken.cs" />
-    <Compile Include="CC\CCVrijwilligersBeheren.cs" />
+    <Compile Include="CC\CCWerkroosterMaken.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,15 +151,15 @@
     <Compile Include="User Interface\Evenementen.aspx.designer.cs">
       <DependentUpon>Evenementen.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VerkoopOrder.cs">
-      <DependentUpon>LamaGaanModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="User Interface\WerkroosterMaken.aspx.cs">
       <DependentUpon>WerkroosterMaken.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="User Interface\WerkroosterMaken.aspx.designer.cs">
       <DependentUpon>WerkroosterMaken.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerkoopOrder.cs">
+      <DependentUpon>LamaGaanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Werkrooster.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>

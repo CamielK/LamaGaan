@@ -1,23 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WerkroosterMaken.aspx.cs" Inherits="LamaGaan.VrijwilligerToevoegen" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/LamaGaan.Master" AutoEventWireup="true" CodeBehind="WerkroosterMaken.aspx.cs" Inherits="LamaGaan.User_Interface.WerkroosterMaken" %>
 
-<!DOCTYPE html>
+<%--
+    Deze pagina is onderdeel van use case 'Werkrooster maken' en vormt de UI voor het aanmaken van een werkrooster.
+    De CC die bij deze pagina hoort is te vinden in de map CC met als naam 'CCWerkroosterMaken.cs'
+    Auteur: Camiel Kerkhofs
+--%>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <style type="text/css">
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
-        <br />
-        <asp:Button ID="BtZoekpersoon" runat="server" Text="zoek persoon" OnClick="BtZoekpersoon_Click" />
-        <br />
-        <br />
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-    </div>
-    </form>
-</body>
-</html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent" runat="server">
+    <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+    <br />
+    <asp:Button ID="BtZoekpersoon" runat="server" Text="zoek persoon" OnClick="BtZoekpersoon_Click" />
+    <br />
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+</asp:Content>
