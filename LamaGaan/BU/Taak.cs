@@ -36,6 +36,7 @@ namespace LamaGaan.BU
 
 
         //geeft taak object dat hoort bij het gegeven Id
+        //auteur: Camiel Kerkhofs
         public static Taak GetTaak(int Id)
         {
             Taak taak = new Taak();

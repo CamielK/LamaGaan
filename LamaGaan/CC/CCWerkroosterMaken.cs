@@ -21,6 +21,7 @@ namespace LamaGaan.CC
 
 
         //roept functie aan uit BU 'Persoon'. geeft een list met strings van alle namen van de personen in Persoon en hun bijbehorende Id
+        //auteur: Camiel Kerkhofs
         public List<string>[] GetAllPersoonNamen()
         {
             List<string>[] namen = persoon.GetAllPersoonNamen(); //proxy pattern
@@ -29,6 +30,7 @@ namespace LamaGaan.CC
 
 
         //roept functie aan uit BU 'Taak'. geeft een list met strings van alle taak omschrijvingen en hun bijbehorende taak Id
+        //auteur: Camiel Kerkhofs
         public List<string>[] GetAllTaakOmschrijvingen()
         {
             List<string>[] taken = taak.GetAllTaakOmschrijvingen(); //proxy pattern
@@ -36,10 +38,29 @@ namespace LamaGaan.CC
         }
 
 
-        //roept functie aan uit BU 'Werkrooster'. voegt nieuw werkrooster toe.
-        public string AddWerkrooster()
+        //converteerd werkrooster dictionary naar een werkrooster object. object word doorgegeven aan BU laag.
+        //auteur: Camiel Kerkhofs
+        public string AddWerkrooster(Dictionary<string, object> nieuwWerkrooster) 
         {
-            string response = rooster.AddWerkrooster();
+            //convert dictionary naar Werkrooster parameters
+            DateTime datum = DateTime.Parse(nieuwWerkrooster["Datum"].ToString());
+            TimeSpan begintime = TimeSpan.Parse(nieuwWerkrooster["Begintijd"].ToString());
+            TimeSpan eindtime = TimeSpan.Parse(nieuwWerkrooster["Eindtijd"].ToString());
+            int persoonId = Int32.Parse(nieuwWerkrooster["Persoon"].ToString());
+            int taakId = Int32.Parse(nieuwWerkrooster["Taak"].ToString());
+
+            //convert parameters naar werkrooster object.
+            Werkrooster werkrooster = new Werkrooster
+            {
+                Datum = datum,
+                EindTijd = eindtime,
+                BeginTijd = begintime,
+                Persoon = Persoon.GetPersoon(persoonId),
+                Taak = Taak.GetTaak(taakId)
+            };
+
+
+            string response = rooster.AddWerkrooster(werkrooster); //geef werkrooster object door aan BU laag.
             return response;
         }
     }

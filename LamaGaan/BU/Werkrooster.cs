@@ -8,47 +8,27 @@ namespace LamaGaan.BU
 {
     partial class Werkrooster
     {
-        //public void test()
-        //{
-        //    this.
-        //}
 
-        public string AddWerkrooster()//Dictionary<string, object> rooster
+        //probeert het werkrooster object op te slaan in de database en geeft een melding of dat gelukt is.
+        //auteur: Camiel Kerkhofs
+        public string AddWerkrooster(Werkrooster nieuwWerkrooster)
         {
-            string response;
+            string response = "Werkrooster niet kunnen toevoegen";
 
-            //add rooster to database
-            string datum2 = "03-02-2015";
-            TimeSpan begintime = TimeSpan.Parse("12:00");
-            TimeSpan eindtime = TimeSpan.Parse("14:00");
-            int persoonId = 1;
-            int taakId = 2;
-
-            
 
             using (LamaGaanModelContainer context = new LamaGaanModelContainer())
             {
-                //convert dictionary to Werkrooster object
-                Werkrooster werkrooster = new Werkrooster
-                {
-                    Datum = DateTime.ParseExact(datum2, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture),
-                    EindTijd = eindtime,
-                    BeginTijd = begintime,
-                    Persoon = Persoon.GetPersoon(persoonId),
-                    Taak = Taak.GetTaak(taakId)
-                };
-
-                context.Entry(werkrooster).State = EntityState.Modified;
-                context.Werkrooster.Add(werkrooster);
+                context.Entry(nieuwWerkrooster).State = EntityState.Modified;
+                context.Werkrooster.Add(nieuwWerkrooster);
 
                 try
                 {
                     context.SaveChanges();
-                    response = "Succesfully added werkrooster";
+                    response = "Werkrooster succesvol toegevoegd";
                 }
                 catch (Exception)
                 {
-                    response = "Could not add werkrooster";
+                    response = "Saving changes to database failed";
                 }
             }
 

@@ -48,14 +48,24 @@ namespace LamaGaan.User_Interface
             }
         }
 
+
+        //dictionary vullen met formulier gegevens. +dictionary doorgeven aan CC laag
         protected void BtAanmaken_Click(object sender, EventArgs e)
         {
             //dictionary vullen met: - persoonId, Datum, begin tijd, eind tijd en taakId
-            
+            Dictionary<string, object> nieuwWerkrooster = new Dictionary<string, object>();
+
+            nieuwWerkrooster.Add("Datum", TbDatum.Text);
+            nieuwWerkrooster.Add("Persoon", DropDownListNamen.SelectedValue.ToString());
+            nieuwWerkrooster.Add("Taak", DropDownListTaken.SelectedValue.ToString());
+            nieuwWerkrooster.Add("Begintijd", TbBegintijd.Text);
+            nieuwWerkrooster.Add("Eindtijd", TbEindtijd.Text);
+
             //geef dictionary mee aan CC methode 'AddWerkrooster'
+            string response = werkrooster.AddWerkrooster(nieuwWerkrooster);
 
             //melding: toevoegen succesvol
-            Label1.Text += werkrooster.AddWerkrooster();
+            Label1.Text += response;
         }
     }
 }

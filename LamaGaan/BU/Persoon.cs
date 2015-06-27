@@ -11,6 +11,7 @@ namespace LamaGaan.BU
     partial class Persoon
     {
         //geeft persoon object dat hoort bij het meegegeven Id
+        //auteur: Camiel Kerkhofs
         public static Persoon GetPersoon(int Id)
         {
             Persoon persoon = new Persoon();
