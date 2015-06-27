@@ -13,6 +13,15 @@ namespace LamaGaan.User_Interface {
     public partial class WerkroosterMaken {
         
         /// <summary>
+        /// TbDatum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbDatum;
+        
+        /// <summary>
         /// DropDownListNamen control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,33 @@ namespace LamaGaan.User_Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownListNamen;
+        
+        /// <summary>
+        /// DropDownListTaken control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListTaken;
+        
+        /// <summary>
+        /// TbBegintijd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbBegintijd;
+        
+        /// <summary>
+        /// TbEindtijd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TbEindtijd;
         
         /// <summary>
         /// BtAanmaken control.
