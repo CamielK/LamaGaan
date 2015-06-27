@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Web;
 using LamaGaan.BU;
@@ -42,26 +43,37 @@ namespace LamaGaan.CC
         //auteur: Camiel Kerkhofs
         public string AddWerkrooster(Dictionary<string, object> nieuwWerkrooster) 
         {
-            //convert dictionary naar Werkrooster parameters
-            DateTime datum = DateTime.Parse(nieuwWerkrooster["Datum"].ToString());
-            TimeSpan begintime = TimeSpan.Parse(nieuwWerkrooster["Begintijd"].ToString());
-            TimeSpan eindtime = TimeSpan.Parse(nieuwWerkrooster["Eindtijd"].ToString());
-            int persoonId = Int32.Parse(nieuwWerkrooster["Persoon"].ToString());
-            int taakId = Int32.Parse(nieuwWerkrooster["Taak"].ToString());
-
-            //convert parameters naar werkrooster object.
-            Werkrooster werkrooster = new Werkrooster
+            try
             {
-                Datum = datum,
-                EindTijd = eindtime,
-                BeginTijd = begintime,
-                Persoon = Persoon.GetPersoon(persoonId),
-                Taak = Taak.GetTaak(taakId)
-            };
+                //convert dictionary naar Werkrooster parameters
+                DateTime datum = DateTime.Parse(nieuwWerkrooster["Datum"].ToString());
+                TimeSpan begintime = TimeSpan.Parse(nieuwWerkrooster["Begintijd"].ToString());
+                TimeSpan eindtime = TimeSpan.Parse(nieuwWerkrooster["Eindtijd"].ToString());
+                int persoonId = Int32.Parse(nieuwWerkrooster["Persoon"].ToString());
+                int taakId = Int32.Parse(nieuwWerkrooster["Taak"].ToString());
+
+                //convert parameters naar werkrooster object.
+                Werkrooster werkrooster = new Werkrooster
+                {
+                    Datum = datum,
+                    EindTijd = eindtime,
+                    BeginTijd = begintime,
+                    Persoon = Persoon.GetPersoon(persoonId),
+                    Taak = Taak.GetTaak(taakId)
+                };
+
+                string response = rooster.AddWerkrooster(werkrooster); //geef werkrooster object door aan BU laag.
+                return response; //geslaagd of niet?
+            }
+            catch (Exception)
+            {
+                string response = "Werkrooster opslaan is mislukt.";
+                return response;
+            }
+            
 
 
-            string response = rooster.AddWerkrooster(werkrooster); //geef werkrooster object door aan BU laag.
-            return response;
+            
         }
     }
 }

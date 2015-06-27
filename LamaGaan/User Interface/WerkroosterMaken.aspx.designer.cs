@@ -22,6 +22,24 @@ namespace LamaGaan.User_Interface {
         protected global::System.Web.UI.WebControls.TextBox TbDatum;
         
         /// <summary>
+        /// RequiredFieldDatum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldDatum;
+        
+        /// <summary>
+        /// RangeValidatorDatum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidatorDatum;
+        
+        /// <summary>
         /// DropDownListNamen control.
         /// </summary>
         /// <remarks>
@@ -29,6 +47,15 @@ namespace LamaGaan.User_Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownListNamen;
+        
+        /// <summary>
+        /// RequiredFieldValidatorVrijwilliger control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorVrijwilliger;
         
         /// <summary>
         /// DropDownListTaken control.
@@ -40,6 +67,15 @@ namespace LamaGaan.User_Interface {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListTaken;
         
         /// <summary>
+        /// RequiredFieldValidatorTaak control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorTaak;
+        
+        /// <summary>
         /// TbBegintijd control.
         /// </summary>
         /// <remarks>
@@ -47,6 +83,24 @@ namespace LamaGaan.User_Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TbBegintijd;
+        
+        /// <summary>
+        /// RequiredFieldValidatorBegintijd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorBegintijd;
+        
+        /// <summary>
+        /// RegularExpressionValidatorBegintijd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorBegintijd;
         
         /// <summary>
         /// TbEindtijd control.
@@ -58,6 +112,33 @@ namespace LamaGaan.User_Interface {
         protected global::System.Web.UI.WebControls.TextBox TbEindtijd;
         
         /// <summary>
+        /// RequiredFieldValidatorEindtijd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEindtijd;
+        
+        /// <summary>
+        /// RegularExpressionValidatorEindtijd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorEindtijd;
+        
+        /// <summary>
+        /// CompareValidatorTijd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorTijd;
+        
+        /// <summary>
         /// BtAanmaken control.
         /// </summary>
         /// <remarks>
@@ -65,6 +146,15 @@ namespace LamaGaan.User_Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtAanmaken;
+        
+        /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
         /// Label1 control.
