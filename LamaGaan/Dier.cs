@@ -23,7 +23,6 @@ namespace LamaGaan.BU
         public string DierNaam { get; set; }
         public string DierSoort { get; set; }
         public System.DateTime GeboorteDatum { get; set; }
-        public int VoerProductId { get; set; }
     
         public virtual ICollection<Taak> Taak { get; set; }
         public virtual Product Product { get; set; }

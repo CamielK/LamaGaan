@@ -6,9 +6,10 @@
     <EntitySet Name="Dier" EntityType="LamaGaan.BU.Store.Dier" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Product" EntityType="LamaGaan.BU.Store.Product" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Persoon" EntityType="LamaGaan.BU.Store.Persoon" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="VerkoopOrderSet" EntityType="LamaGaan.BU.Store.VerkoopOrderSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VerkoopOrder" EntityType="LamaGaan.BU.Store.VerkoopOrder" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Evenement" EntityType="LamaGaan.BU.Store.Evenement" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Reservering" EntityType="LamaGaan.BU.Store.Reservering" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InkoopOrder" EntityType="LamaGaan.BU.Store.InkoopOrder" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="PersoonWerkrooster" Association="LamaGaan.BU.Store.PersoonWerkrooster">
       <End Role="Persoon" EntitySet="Persoon" />
       <End Role="Werkrooster" EntitySet="Werkrooster" />
@@ -27,15 +28,19 @@
     </AssociationSet>
     <AssociationSet Name="ProductVerkoopOrder" Association="LamaGaan.BU.Store.ProductVerkoopOrder">
       <End Role="Product" EntitySet="Product" />
-      <End Role="VerkoopOrder" EntitySet="VerkoopOrderSet" />
+      <End Role="VerkoopOrder" EntitySet="VerkoopOrder" />
+    </AssociationSet>
+    <AssociationSet Name="ReserveringVerkoopOrder" Association="LamaGaan.BU.Store.ReserveringVerkoopOrder">
+      <End Role="Reservering" EntitySet="Reservering" />
+      <End Role="VerkoopOrder" EntitySet="VerkoopOrder" />
     </AssociationSet>
     <AssociationSet Name="EvenementReservering" Association="LamaGaan.BU.Store.EvenementReservering">
       <End Role="Evenement" EntitySet="Evenement" />
       <End Role="Reservering" EntitySet="Reservering" />
     </AssociationSet>
-    <AssociationSet Name="VerkoopOrderReservering" Association="LamaGaan.BU.Store.VerkoopOrderReservering">
-      <End Role="VerkoopOrder" EntitySet="VerkoopOrderSet" />
-      <End Role="Reservering" EntitySet="Reservering" />
+    <AssociationSet Name="ProductInkoopOrder" Association="LamaGaan.BU.Store.ProductInkoopOrder">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="InkoopOrder" EntitySet="InkoopOrder" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Werkrooster">
@@ -43,11 +48,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PersoonId" Type="int" Nullable="false" />
     <Property Name="Datum" Type="datetime" Nullable="false" />
     <Property Name="BeginTijd" Type="time" Nullable="false" Precision="7" />
     <Property Name="EindTijd" Type="time" Nullable="false" Precision="7" />
-    <Property Name="TaakId" Type="int" Nullable="false" />
     <Property Name="Persoon_Id" Type="int" Nullable="false" />
     <Property Name="Taak_Id" Type="int" Nullable="false" />
   </EntityType>
@@ -57,7 +60,6 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Omschrijving" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DierId" Type="int" Nullable="false" />
     <Property Name="Dier_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Dier">
@@ -68,7 +70,6 @@
     <Property Name="DierNaam" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DierSoort" Type="nvarchar(max)" Nullable="false" />
     <Property Name="GeboorteDatum" Type="datetime" Nullable="false" />
-    <Property Name="VoerProductId" Type="int" Nullable="false" />
     <Property Name="Product_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Product">
@@ -82,7 +83,7 @@
     <Property Name="VerkoopPrijs" Type="int" Nullable="true" />
     <Property Name="InkoopPrijs" Type="int" Nullable="true" />
     <Property Name="MinVoorraad" Type="int" Nullable="true" />
-    <Property Name="InkoopWinkel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="InkoopWinkel" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="Persoon">
     <Key>
@@ -102,16 +103,16 @@
     <Property Name="Functie" Type="nvarchar(max)" Nullable="false" />
     <Property Name="GeboorteDatum" Type="datetime" Nullable="false" />
   </EntityType>
-  <EntityType Name="VerkoopOrderSet">
+  <EntityType Name="VerkoopOrder">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Datum" Type="datetime" Nullable="false" />
-    <Property Name="ProductId" Type="int" Nullable="false" />
     <Property Name="Aantal" Type="int" Nullable="false" />
     <Property Name="TotaalPrijs" Type="int" Nullable="false" />
     <Property Name="Product_Id" Type="int" Nullable="false" />
+    <Property Name="Reservering_Id" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="Evenement">
     <Key>
@@ -121,19 +122,27 @@
     <Property Name="Naam" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Soort" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Datum" Type="datetime" Nullable="false" />
-    <Property Name="AantalPersonen" Type="int" Nullable="false" />
-    <Property Name="Korting" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MaxAantalPersonen" Type="int" Nullable="false" />
+    <Property Name="Korting" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Reservering">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="EvenementId" Type="int" Nullable="false" />
     <Property Name="Naam" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Datum" Type="datetime" Nullable="false" />
     <Property Name="Evenement_Id" Type="int" Nullable="true" />
-    <Property Name="VerkoopOrder_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InkoopOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Datum" Type="datetime" Nullable="false" />
+    <Property Name="Aantal" Type="int" Nullable="false" />
+    <Property Name="TotaalPrijs" Type="int" Nullable="false" />
+    <Property Name="Product_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="PersoonWerkrooster">
     <End Role="Persoon" Type="LamaGaan.BU.Store.Persoon" Multiplicity="1" />
@@ -185,13 +194,25 @@
   </Association>
   <Association Name="ProductVerkoopOrder">
     <End Role="Product" Type="LamaGaan.BU.Store.Product" Multiplicity="1" />
-    <End Role="VerkoopOrder" Type="LamaGaan.BU.Store.VerkoopOrderSet" Multiplicity="*" />
+    <End Role="VerkoopOrder" Type="LamaGaan.BU.Store.VerkoopOrder" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Product">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="VerkoopOrder">
         <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReserveringVerkoopOrder">
+    <End Role="Reservering" Type="LamaGaan.BU.Store.Reservering" Multiplicity="0..1" />
+    <End Role="VerkoopOrder" Type="LamaGaan.BU.Store.VerkoopOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservering">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VerkoopOrder">
+        <PropertyRef Name="Reservering_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -207,15 +228,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="VerkoopOrderReservering">
-    <End Role="VerkoopOrder" Type="LamaGaan.BU.Store.VerkoopOrderSet" Multiplicity="1" />
-    <End Role="Reservering" Type="LamaGaan.BU.Store.Reservering" Multiplicity="*" />
+  <Association Name="ProductInkoopOrder">
+    <End Role="Product" Type="LamaGaan.BU.Store.Product" Multiplicity="1" />
+    <End Role="InkoopOrder" Type="LamaGaan.BU.Store.InkoopOrder" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="VerkoopOrder">
+      <Principal Role="Product">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Reservering">
-        <PropertyRef Name="VerkoopOrder_Id" />
+      <Dependent Role="InkoopOrder">
+        <PropertyRef Name="Product_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

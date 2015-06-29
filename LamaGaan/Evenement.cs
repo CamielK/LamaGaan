@@ -23,8 +23,8 @@ namespace LamaGaan.BU
         public string Naam { get; set; }
         public string Soort { get; set; }
         public System.DateTime Datum { get; set; }
-        public int AantalPersonen { get; set; }
-        public string Korting { get; set; }
+        public int MaxAantalPersonen { get; set; }
+        public int Korting { get; set; }
     
         public virtual ICollection<Reservering> Reservering { get; set; }
     }

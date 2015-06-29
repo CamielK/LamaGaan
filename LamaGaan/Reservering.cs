@@ -15,11 +15,10 @@ namespace LamaGaan.BU
     public partial class Reservering
     {
         public int Id { get; set; }
-        public int EvenementId { get; set; }
         public string Naam { get; set; }
         public System.DateTime Datum { get; set; }
     
-        public virtual Evenement Evenement { get; set; }
         public virtual VerkoopOrder VerkoopOrder { get; set; }
+        public virtual Evenement Evenement { get; set; }
     }
 }
