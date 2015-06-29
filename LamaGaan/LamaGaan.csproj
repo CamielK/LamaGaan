@@ -77,9 +77,8 @@
     <Content Include="Style\Images\bg.jpg" />
     <Content Include="Style\Images\Header.png" />
     <Content Include="Style\Images\lamagaanLogo.png" />
-    <Content Include="User Interface\Dennis\AlleEvenementen.aspx" />
-    <Content Include="User Interface\Dennis\EvenementAanmaken.aspx" />
-    <Content Include="VrijwilligersBeheren.aspx" />
+    <Content Include="User Interface\Evenementen.aspx" />
+    <Content Include="User Interface\WerkroosterMaken.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -92,9 +91,8 @@
     <Compile Include="BU\Taak.cs" />
     <Compile Include="BU\VerkoopOrder.cs" />
     <Compile Include="BU\Werkrooster.cs" />
-    <Compile Include="CC\CCAlleEvenementenTonen.cs" />
     <Compile Include="CC\CCEvenementMaken.cs" />
-    <Compile Include="CC\CCVrijwilligersBeheren.cs" />
+    <Compile Include="CC\CCWerkroosterMaken.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,6 +108,9 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InkoopOrder.cs">
+      <DependentUpon>LamaGaanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LamaGaanModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -146,29 +147,22 @@
     <Compile Include="Taak.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="User Interface\Dennis\AlleEvenementen.aspx.cs">
-      <DependentUpon>AlleEvenementen.aspx</DependentUpon>
+    <Compile Include="User Interface\Evenementen.aspx.cs">
+      <DependentUpon>Evenementen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User Interface\Dennis\AlleEvenementen.aspx.designer.cs">
-      <DependentUpon>AlleEvenementen.aspx</DependentUpon>
+    <Compile Include="User Interface\Evenementen.aspx.designer.cs">
+      <DependentUpon>Evenementen.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User Interface\Dennis\EvenementAanmaken.aspx.cs">
-      <DependentUpon>EvenementAanmaken.aspx</DependentUpon>
+    <Compile Include="User Interface\WerkroosterMaken.aspx.cs">
+      <DependentUpon>WerkroosterMaken.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User Interface\Dennis\EvenementAanmaken.aspx.designer.cs">
-      <DependentUpon>EvenementAanmaken.aspx</DependentUpon>
+    <Compile Include="User Interface\WerkroosterMaken.aspx.designer.cs">
+      <DependentUpon>WerkroosterMaken.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerkoopOrder.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="VrijwilligersBeheren.aspx.cs">
-      <DependentUpon>VrijwilligersBeheren.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VrijwilligersBeheren.aspx.designer.cs">
-      <DependentUpon>VrijwilligersBeheren.aspx</DependentUpon>
     </Compile>
     <Compile Include="Werkrooster.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>
