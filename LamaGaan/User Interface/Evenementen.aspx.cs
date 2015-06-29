@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -13,12 +14,27 @@ namespace LamaGaan.User_Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CCEvenementMaken allEvenement = new CCEvenementMaken();
-            List<string> namenList = allEvenement.GetAllEvents();
-            foreach(string naam in namenList)
-            {
-                Label1.Text += naam + "<br />";
-            }
+            //CCEvenementMaken allEvenement = new CCEvenementMaken();
+            //List<string> namenList = allEvenement.GetAllEvents();
+            //foreach(string naam in namenList)
+            //{
+            //    Label1.Text += naam + "<br />";
+            //}
+
+        }
+
+        protected void tbOpslaan_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, object> eventDictionary = new Dictionary<string, object>();
+            eventDictionary.Add("Naam", tbNaam.Text);
+            eventDictionary.Add("Soort", ddlSoort.Text);
+            eventDictionary.Add("Datum", tbDatum.Text);
+            eventDictionary.Add("AantalPersonen", tbAantalPersonen.Text);
+            eventDictionary.Add("Korting", tbKorting.Text);
+
+            CCEvenementMaken Evenement = new CCEvenementMaken();
+
+            Evenement.AddEvent(eventDictionary);
         }
     }
 }

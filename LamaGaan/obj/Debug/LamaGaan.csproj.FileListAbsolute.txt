@@ -44,3 +44,15 @@ D:\Visual Studio\Projects\LamaGaan\LamaGaan\bin\Microsoft.AspNet.FriendlyUrls.xm
 D:\Visual Studio\Projects\LamaGaan\LamaGaan\obj\Debug\LamaGaan.csprojResolveAssemblyReference.cache
 D:\Visual Studio\Projects\LamaGaan\LamaGaan\obj\Debug\LamaGaan.dll
 D:\Visual Studio\Projects\LamaGaan\LamaGaan\obj\Debug\LamaGaan.pdb
+D:\Visual Studio\LamaGaan\LamaGaan\bin\LamaGaan.dll.config
+D:\Visual Studio\LamaGaan\LamaGaan\bin\LamaGaan.dll
+D:\Visual Studio\LamaGaan\LamaGaan\bin\LamaGaan.pdb
+D:\Visual Studio\LamaGaan\LamaGaan\bin\EntityFramework.dll
+D:\Visual Studio\LamaGaan\LamaGaan\bin\EntityFramework.SqlServer.dll
+D:\Visual Studio\LamaGaan\LamaGaan\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Visual Studio\LamaGaan\LamaGaan\bin\EntityFramework.xml
+D:\Visual Studio\LamaGaan\LamaGaan\bin\EntityFramework.SqlServer.xml
+D:\Visual Studio\LamaGaan\LamaGaan\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Visual Studio\LamaGaan\LamaGaan\obj\Debug\LamaGaan.csprojResolveAssemblyReference.cache
+D:\Visual Studio\LamaGaan\LamaGaan\obj\Debug\LamaGaan.dll
+D:\Visual Studio\LamaGaan\LamaGaan\obj\Debug\LamaGaan.pdb

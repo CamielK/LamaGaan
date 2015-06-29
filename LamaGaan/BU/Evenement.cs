@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
@@ -8,61 +9,43 @@ namespace LamaGaan.BU
 {
     partial class Evenement
     {
-        public Dictionary<string, object> GetDateEvents(string date)
+
+        public string AddEvent(Evenement nieuwEvenement)
         {
-            Dictionary<string, object> eventDictionary = new Dictionary<string, object>();
+            string response = "Evenement niet kunnen toevoegen";
 
-            using (LamaGaanModelContainer context = new LamaGaanModelContainer())
+            using (LamaGaanModelContainer db = new LamaGaanModelContainer())
             {
-                IQueryable<Evenement> chooseEvenements
-                    = from x in context.Evenement
-                      where x.Datum.ToString("MM-dd-yyyy") == date
-                      select x;
-                foreach (Evenement evenement in chooseEvenements)
+                db.Entry(nieuwEvenement).State = EntityState.Modified;
+                db.Evenement.Add(nieuwEvenement);
+                try
                 {
-                    if (evenement != null)
-                    {
-                        eventDictionary.Add("Naam", Naam);
-                        eventDictionary.Add("Soort", Soort);
-                        eventDictionary.Add("Datum", Datum);
-                        eventDictionary.Add("AantalPersonen", MaxAantalPersonen);
-                        eventDictionary.Add("Korting", Korting);
-                    }
-
+                    db.SaveChanges();
+                    response = "Evenement toegevoegd.";
+                }
+                catch (Exception)
+                {
+                    response = "Evenement toevoegen mislukt.";
                 }
             }
-            return eventDictionary;
+            return response;
         }
 
-        public List<string> GetAllEvents()
-        {
-            List<string> events = new List<string>();
-            using (LamaGaanModelContainer context = new LamaGaanModelContainer())
-            {
-                IQueryable<Evenement> eventQuery = from a in context.Evenement select a;
-                foreach (Evenement a in eventQuery)
-                {
-                    events.Add(a.Naam.ToString());
-                }
-            }
-            return events;
-        }
-        //public Dictionary<string,object> GetAllEvents()
+        //public List<string> GetAllEvents()
         //{
-        //    Dictionary<string, object> allevents = new Dictionary<string, object>();
+        //    List<string> events = new List<string>();
         //    using (LamaGaanModelContainer context = new LamaGaanModelContainer())
         //    {
-        //        IQueryable<Evenement> allEvenementsQ = from x in context.Evenement select x;
-        //        foreach (Evenement evenement in allEvenementsQ)
+        //        IQueryable<Evenement> eventQuery = from a in context.Evenement select a;
+        //        foreach (Evenement a in eventQuery)
         //        {
-        //            allevents.Add("Naam", Naam);
-        //            allevents.Add("Soort", Soort);
-        //            allevents.Add("Datum", Datum);
-        //            allevents.Add("AantalPersonen", AantalPersonen);
-        //            allevents.Add("Korting", Korting);
-        //            allevents.Add("RowEnd", "RowEnd");
+        //            events.Add(a.Naam.ToString());
         //        }
-        //        return allevents;
         //    }
+        //    return events;
+        //}
+
+
+
     }
 }
