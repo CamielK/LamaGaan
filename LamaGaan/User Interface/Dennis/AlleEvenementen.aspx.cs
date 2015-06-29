@@ -13,12 +13,11 @@ namespace LamaGaan.User_Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CCEvenementMaken allEvenement = new CCEvenementMaken();
-            List<string> namenList = allEvenement.GetAllEvents();
-            foreach(string naam in namenList)
-            {
-                Label1.Text += naam + "<br />";
-            }
+            CCAlleEvenementenTonen tonen = new CCAlleEvenementenTonen();
+            //show.GetAllEvents();
+            GridView1.DataSource = tonen.GetEvents();
+            GridView1.DataBind();
+
         }
     }
 }
