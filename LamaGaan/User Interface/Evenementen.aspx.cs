@@ -28,21 +28,17 @@ namespace LamaGaan.User_Interface
 
         protected void tbOpslaan_Click(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-                
+            Dictionary<string, object> eventDictionary = new Dictionary<string, object>();
+            eventDictionary.Add("Naam", tbNaam.Text);
+            eventDictionary.Add("Soort", ddlSoort.Text);
+            eventDictionary.Add("Datum", tbDatum.Text);
+            eventDictionary.Add("AantalPersonen", tbAantalPersonen.Text);
+            eventDictionary.Add("Korting", tbKorting.Text);
 
-                Dictionary<string, object> eventDictionary = new Dictionary<string, object>();
-                eventDictionary.Add("Naam", tbNaam.Text);
-                eventDictionary.Add("Soort", ddlSoort.Text);
-                eventDictionary.Add("Datum", tbDatum.Text);
-                eventDictionary.Add("AantalPersonen", tbAantalPersonen.Text);
-                eventDictionary.Add("Korting", tbKorting.Text);
-
-                CCEvenementMaken Evenement = new CCEvenementMaken();
-                Evenement.AddEvent(eventDictionary);
-                Evenement.AddReservering(eventDictionary);
-            //}
+            CCEvenementMaken Evenement = new CCEvenementMaken();
+            lbResponse.Text = Evenement.AddEvent(eventDictionary);
+            
+            
         }
     }
 }

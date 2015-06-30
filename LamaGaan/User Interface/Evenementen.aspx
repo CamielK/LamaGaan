@@ -38,6 +38,7 @@
         <asp:ListItem>Kortingsactie</asp:ListItem>
         <asp:ListItem>Afhuren Park</asp:ListItem>
         <asp:ListItem>Bedrijfsuitje</asp:ListItem>
+        <asp:ListItem>Anders</asp:ListItem>
     </asp:DropDownList>
             </td>
             <td class="auto-style4">
@@ -71,7 +72,7 @@
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbKorting" CssClass="ErrorMessage" ErrorMessage="Vul een kortingspercentage in tussen 0 en 100.">*</asp:RequiredFieldValidator>
-                <asp:RangeValidator ID="RangeValidator3" runat="server" ControlToValidate="tbKorting" CssClass="ErrorMessage" ErrorMessage="Vul een getal tussen 0 en 100 in." MaximumValue="100" MinimumValue="0">*</asp:RangeValidator>
+                <asp:RangeValidator ID="RangeValidator3" runat="server" ControlToValidate="tbKorting" CssClass="ErrorMessage" ErrorMessage="Vul een getal tussen 0 en 100 in." MaximumValue="100" MinimumValue="0" Type="Integer">*</asp:RangeValidator>
             </td>
         </tr>
         <tr>
@@ -81,6 +82,11 @@
 
             </td>
             <td class="auto-style5"></td>
+        </tr>
+        <tr>
+            <td class="auto-style5" colspan="3">
+                <asp:Label ID="lbResponse" runat="server" CssClass="ErrorMessage"></asp:Label>
+            </td>
         </tr>
         <tr>
             <td colspan="3">

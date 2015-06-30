@@ -10,10 +10,13 @@ namespace LamaGaan.BU
     partial class Evenement
     {
         public int IdLastAddedEvent;
-        public string AddEvent(Evenement nieuwEvenement)
+        
+        public List<string> AddEvent(Evenement nieuwEvenement)
         {
-            string response = "Evenement niet kunnen toevoegen";
-
+            List<string> response = new List<string>();
+            response.Add("response text");
+            response.Add("Event Id");
+            
             using (LamaGaanModelContainer db = new LamaGaanModelContainer())
             {
                 db.Entry(nieuwEvenement).State = EntityState.Modified;
@@ -21,12 +24,13 @@ namespace LamaGaan.BU
                 try
                 {
                     db.SaveChanges();
-                    IdLastAddedEvent = nieuwEvenement.Id; // id van pas toegevoegd evenement
-                    response = "Evenement toegevoegd.";
+                    response[1] =  nieuwEvenement.Id.ToString(); // id van pas toegevoegd evenement
+                    response[0] = "Evenement toevoegen was succesvol.";
+                    
                 }
                 catch (Exception)
                 {
-                    response = "Evenement toevoegen mislukt.";
+                    response[0] = "Evenement toevoegen mislukt.";
                 }
             }
             return response;
@@ -34,8 +38,28 @@ namespace LamaGaan.BU
             
         }
 
-      
 
+        public Evenement GetEvent(int Id)
+        {
+             Evenement evenement = new Evenement();
+
+            using (LamaGaanModelContainer context = new LamaGaanModelContainer())
+            {
+                IQueryable<Evenement> naamQuery =
+                    from p in context.Evenement
+                    where p.Id == Id
+                    select p;
+
+                foreach (Evenement p in naamQuery)
+                {
+                    if (p != null)
+                    {
+                        evenement = p;
+                    }
+                }
+            }
+            return evenement;
+        }
         //public List<string> GetAllEvents()
         //{
         //    List<string> events = new List<string>();
