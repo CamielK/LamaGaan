@@ -26,7 +26,8 @@
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="ErrorMessage" HeaderText="Los aub de volgende fouten op:" ShowMessageBox="True" ShowSummary="False" Height="88px" />
     
     <span id="werkroosterSpan" runat="server" Visible="False">
-        <br /><br /><br />
+        <br /><br />
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label><br />
         <asp:GridView ID="GridView1" HeaderStyle-BackColor="#aaaaaa" HeaderStyle-ForeColor="White" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="Datum" HeaderText="Datum" ItemStyle-Width="150" />

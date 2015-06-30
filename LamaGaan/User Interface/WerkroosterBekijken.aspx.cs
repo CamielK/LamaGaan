@@ -40,6 +40,7 @@ namespace LamaGaan.User_Interface
         {
             GridView1.DataSource = werkrooster.DrawRooster(DropDownListNamen.SelectedItem.Text);
             GridView1.DataBind();
+            Label1.Text = "Dit is het werkrooster van " + DropDownListNamen.SelectedItem.Text + ":";
             werkroosterSpan.Visible = true;
         }
     }
