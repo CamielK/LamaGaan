@@ -74,10 +74,11 @@
     <Content Include="LamaGaanModel.edmx.sql" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Style\Default.css" />
-    <Content Include="Style\Images\bg.jpg" />
     <Content Include="Style\Images\Header.png" />
     <Content Include="Style\Images\lamagaanLogo.png" />
+    <Content Include="Style\Images\background.png" />
     <Content Include="User Interface\Evenementen.aspx" />
+    <Content Include="User Interface\WerkroosterBekijken.aspx" />
     <Content Include="User Interface\WerkroosterMaken.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -92,6 +93,7 @@
     <Compile Include="BU\VerkoopOrder.cs" />
     <Compile Include="BU\Werkrooster.cs" />
     <Compile Include="CC\CCEvenementMaken.cs" />
+    <Compile Include="CC\CCWerkroosterBekijken.cs" />
     <Compile Include="CC\CCWerkroosterMaken.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -153,6 +155,13 @@
     </Compile>
     <Compile Include="User Interface\Evenementen.aspx.designer.cs">
       <DependentUpon>Evenementen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\WerkroosterBekijken.aspx.cs">
+      <DependentUpon>WerkroosterBekijken.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Interface\WerkroosterBekijken.aspx.designer.cs">
+      <DependentUpon>WerkroosterBekijken.aspx</DependentUpon>
     </Compile>
     <Compile Include="User Interface\WerkroosterMaken.aspx.cs">
       <DependentUpon>WerkroosterMaken.aspx</DependentUpon>

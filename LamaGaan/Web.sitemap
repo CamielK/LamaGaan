@@ -2,23 +2,23 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="~/" title="Home"  description="Home">
     <siteMapNode url="~/Default.aspx" title="Home"  description="Ga naar de homepage" />
-    <siteMapNode url="~/OverOns/Default.aspx" title="Over ons"  description="Algemene informatie over Lama Gaan">
-      <siteMapNode url="~/OverOns/AlgemeneInformatie.aspx" title="Algemene Informatie" description="Algemene Informatie van Lama Gaan" />
-      <siteMapNode url="~/OverOns/Entree.aspx" title="Entree" description="Entree tarieven van Lama Gaan" />
-      <siteMapNode url="~/OverOns/Openingstijden.aspx" title="Openingstijden" description="Openingstijden van Lama Gaan" />
-      <siteMapNode url="~/Geschiedenis.aspx" title="Geschiedenis" description="Geschiedenis van Lama Gaan" />
-      <siteMapNode url="~/OverOns/Bestuur.aspx" title="Bestuur" description="Het bestuur van Lama Gaan" />
-      <siteMapNode url="~/OverOns/Dieren.aspx" title="Dieren" description="Alle dieren van Lama Gaan" />
-      <siteMapNode url="~/OverOns/Huisregels.aspx" title="Huisregels" description="Huisregels van Lama Gaan" />
+    <siteMapNode url="" title="Over ons"  description="Algemene informatie over Lama Gaan">
+      <siteMapNode url="" title="Algemene Informatie" description="Algemene Informatie van Lama Gaan" />
+      <siteMapNode url="" title="Entree" description="Entree tarieven van Lama Gaan" />
+      <siteMapNode url="" title="Openingstijden" description="Openingstijden van Lama Gaan" />
+      <siteMapNode url="" title="Geschiedenis" description="Geschiedenis van Lama Gaan" />
+      <siteMapNode url="" title="Bestuur" description="Het bestuur van Lama Gaan" />
+      <siteMapNode url="" title="Dieren" description="Alle dieren van Lama Gaan" />
+      <siteMapNode url="" title="Huisregels" description="Huisregels van Lama Gaan" />
     </siteMapNode>
-    <siteMapNode url="~/Evenementen/Default.aspx" title="Evenementen"  description="Evenementen pagina">
-      <siteMapNode url="~/Evenementen/Evenement1.aspx" title="Evenement 1" description="Evenement 1" />
-      <siteMapNode url="~/Evenementen/Evenement2.aspx" title="Evenement 2" description="Evenement 2" />
-      <siteMapNode url="~/Evenementen/Evenement3.aspx" title="Evenement 3" description="Evenement 3" />
+    <siteMapNode url="" title="Evenementen"  description="Evenementen pagina">
+      <siteMapNode url="" title="Evenement 1" description="Evenement 1" />
+      <siteMapNode url="" title="Evenement 2" description="Evenement 2" />
+      <siteMapNode url="" title="Evenement 3" description="Evenement 3" />
     </siteMapNode>
-    <siteMapNode url="~/KaartjesReserveren.aspx" title="Reserveren" description="Kaartjes reserveren voor Lama Gaan" />
-    <siteMapNode url="~/PonyStalling.aspx" title="Pony stalling" description="Pony stalling huren in Lama Gaan" />
-    <siteMapNode url="~/Contact.aspx" title="Contact"  description="Contact formulier" />
+    <siteMapNode url="" title="Reserveren" description="Kaartjes reserveren voor Lama Gaan" />
+    <siteMapNode url="" title="Pony stalling" description="Pony stalling huren in Lama Gaan" />
+    <siteMapNode url="" title="Contact"  description="Contact formulier" />
   </siteMapNode>
 </siteMap>
 

@@ -16,7 +16,7 @@ namespace LamaGaan.CC
 {
     public class CCWerkroosterMaken
     {
-        private Persoon persoon = new Persoon(); //entiteit Persoon aanroepen (lezen van taken en Id)
+        private Persoon persoon = new Persoon(); //entiteit Persoon aanroepen (lezen van personen en Id)
         private Taak taak = new Taak(); //entiteit Taak aanroepen (lezen van taken en Id)
         private Werkrooster rooster = new Werkrooster(); //entiteit Werkrooster aanroepen (Schrijven nieuw rooster)
 

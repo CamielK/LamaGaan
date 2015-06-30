@@ -2,8 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent" runat="server">
-    Use case Camiel: <a href="User Interface/WerkroosterMaken.aspx">Werkrooster maken</a><br />
-    Use case Dennis: <a href="User Interface/Evenementen.aspx">Evenement maken</a><br />
-    Use case Mischa: <%--<a href="">Kassa verkoop</a>--%>Kassa verkoop<br />
-    Use case Jimi: <%--<a href="">??</a>--%>??<br />
+    Use case Camiel Kerkhofs: <a href="User Interface/WerkroosterMaken.aspx">(1)Werkrooster maken</a> en <a href="User Interface/WerkroosterBekijken.aspx">(2)Werkrooster bekijken</a><br />
+    Use case Dennis Kooij: <a href="User Interface/Evenementen.aspx">Evenement maken</a><br />
+    Use case Mischa Rouleaux: <a href="#">Kassa verkoop</a><br />
 </asp:Content>

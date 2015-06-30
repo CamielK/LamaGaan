@@ -18,24 +18,23 @@
                 <asp:Menu ID="Menu1" runat="server" CssClass="MainMenu" Orientation="Horizontal" StaticEnableDefaultPopOutImage="False" DataSourceID="SiteMapDataSource1"></asp:Menu>
                 <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
             </nav>
+            
             <section id="MainContent">
                 <asp:ContentPlaceHolder ID="cpMainContent" runat="server">
                 </asp:ContentPlaceHolder>
             </section>
-            <aside id="Sidebar"></aside>
-            <footer id="footer-bottom">
-                <div>
-                    <p>
-                        <span class="copyright"><span style="color:#aaa;">&copy; 2015</span> Kinderboerderij "Lama gaan" <span style="color: #aaa;"> All rights reserved.</span></span>
-                        <span class="footer-buttons"><a href="#">
-                        &nbsp;Home |</a>
-                        <a href="#">Inloggen |</a>
-                        <a href="#">Contact </a>
-
-                        
-                    </span>
-                    </p>   
-                </div>
+            <aside id="Sidebar">
+                <br />Use case Camiel Kerkhofs:<br /><a href="../User Interface/WerkroosterMaken.aspx">(1)Werkrooster maken</a><br /><a href="../User Interface/WerkroosterBekijken.aspx">(2)Werkrooster bekijken</a><br /><br />
+                <br />Use case Dennis Kooij:<br /><a href="../User Interface/Evenementen.aspx">Evenement maken</a><br /><br />
+                <br />Use case Mischa Rouleaux:<br /><a href="#">Kassa verkoop</a><br /><br />
+            </aside>
+            <footer>
+                <span class="copyright">
+                    &copy; 2015 <span class="copyrightText">Kinderboerderij "Lama gaan"</span> All rights reserved.
+                </span>
+                <span class="footer-buttons">
+                    <a href="/">Home</a> | <a href="#">Inloggen</a> | <a href="#">Contact </a>
+                </span>
             </footer>
         </div>
     </form>
