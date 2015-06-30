@@ -61,7 +61,7 @@
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbAantalPersonen" CssClass="ErrorMessage" ErrorMessage="Vul een aantal personen in.">*</asp:RequiredFieldValidator>
-                <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="tbAantalPersonen" CssClass="ErrorMessage" ErrorMessage="Vul een aantal personen in tussen 1 en 170." MaximumValue="170" MinimumValue="1">*</asp:RangeValidator>
+                <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="tbAantalPersonen" CssClass="ErrorMessage" ErrorMessage="Vul een aantal personen in tussen 1 en 170." MaximumValue="170" MinimumValue="1" Type="Integer">*</asp:RangeValidator>
             </td>
         </tr>
         <tr>
