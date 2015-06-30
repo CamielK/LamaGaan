@@ -8,10 +8,7 @@ namespace LamaGaan.BU
 {
     partial class Reservering
     {
-        //public void test()
-        //{
-        //    this.
-        //}
+
           public string ReserveringPlaatsen(Reservering nieuweReservering)
         {
             string response = "Evenement niet kunnen toevoegen";
@@ -23,11 +20,11 @@ namespace LamaGaan.BU
                 try
                 {
                     db.SaveChanges();
-                    response = "Reservering toegevoegd.";
+                    response = "Evenement toevoegen was succesvol.";
                 }
                 catch (Exception)
                 {
-                    response = "Reservering toevoegen mislukt.";
+                    response = "Evenement toevoegen mislukt.";
                 }
             }
             return response;
