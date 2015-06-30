@@ -15,11 +15,12 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cpMainContent" runat="server">
-    <%--<asp:Label ID="Label1" runat="server"></asp:Label>--%>
     <br />
     <table class="auto-style1">
         <tr>
-            <td class="auto-style2" colspan="3">Vul de onderstaande gegevens in om een evenement te plannen en een reservering aan te maken:</td>
+            <td class="auto-style2" colspan="3">Auteur van deze use case: &quot;Evenement aanmaken.&quot; is Dennis Kooij<br />
+                <br />
+                Vul de onderstaande gegevens in om een evenement te plannen en een reservering aan te maken:</td>
         </tr>
         <tr>
             <td>Naam:</td>

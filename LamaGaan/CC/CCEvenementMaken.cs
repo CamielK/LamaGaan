@@ -6,9 +6,18 @@ using LamaGaan.BU;
 
 namespace LamaGaan.CC
 {
+    //---------
+    //Deze CC behoort tot de use case 'Evenement Maken'.
+    //BU klassen (entiteiten) die hierbij betrokken zijn zijn: Evenement (lezen id en aanmaken evenement in de db), Reservering(Reservering maken in db)
+    //auteur: Dennis Kooij
+    //---------
     public class CCEvenementMaken
     {
-
+        /// <summary>
+        /// Deze functie maakt een evenement aan in de database door de BU Evenement aan te roepen en vervolgens wordt in de db tabel reservering een n aantal reserveringen aangemaakt op basis van het aantal ingevuld personen
+        /// </summary>
+        /// <param name="nieuwEvent"> is een dictionary van de ingevulde data op de pagina</param>
+        /// <returns></returns>
         public string AddEvent(Dictionary<string, object> nieuwEvent)
         {
             //convert dictionary naar Evenement parameters
@@ -41,7 +50,7 @@ namespace LamaGaan.CC
 
                 response[0] = res.ReserveringPlaatsen(res); //reserveringen opslaan in database
             }
-            return response[0]; // geslaagd of niet?
+            return response[0]; // Zijn er problemen?
         }
 
        

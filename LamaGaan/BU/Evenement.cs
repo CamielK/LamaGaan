@@ -9,8 +9,14 @@ namespace LamaGaan.BU
 {
     partial class Evenement
     {
+
         public int IdLastAddedEvent;
         
+        /// <summary>
+        /// Voegt een nieuw evenement toe aan de database.
+        /// </summary>
+        /// <param name="nieuwEvenement"> dictionary van de toegevoegde data, doorgezet vanuit de CC laag.</param>
+        /// <returns>returned een list waarbij index 0 een string is waarin staat of het event aanmaken is gelukt of niet en index 1 het laatst toegevoegde id.</returns>
         public List<string> AddEvent(Evenement nieuwEvenement)
         {
             List<string> response = new List<string>();
@@ -38,7 +44,11 @@ namespace LamaGaan.BU
             
         }
 
-
+        /// <summary>
+        /// Returned het laatste toegevoegde evenement object
+        /// </summary>
+        /// <param name="Id"> is de waarde van de response[1] list in de bovenstaande functie</param>
+        /// <returns>het laatst aangemaakte object</returns>
         public Evenement GetEvent(int Id)
         {
              Evenement evenement = new Evenement();
@@ -60,19 +70,7 @@ namespace LamaGaan.BU
             }
             return evenement;
         }
-        //public List<string> GetAllEvents()
-        //{
-        //    List<string> events = new List<string>();
-        //    using (LamaGaanModelContainer context = new LamaGaanModelContainer())
-        //    {
-        //        IQueryable<Evenement> eventQuery = from a in context.Evenement select a;
-        //        foreach (Evenement a in eventQuery)
-        //        {
-        //            events.Add(a.Naam.ToString());
-        //        }
-        //    }
-        //    return events;
-        //}
+        
 
 
 

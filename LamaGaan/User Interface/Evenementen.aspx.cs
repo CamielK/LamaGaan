@@ -7,7 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LamaGaan.BU;
 using LamaGaan.CC;
-
+// Auteur Dennis Kooij.
 namespace LamaGaan.User_Interface
 {
     public partial class Evenementen : System.Web.UI.Page
@@ -17,15 +17,12 @@ namespace LamaGaan.User_Interface
             RangeValidatorDatum.Type = ValidationDataType.Date;
             RangeValidatorDatum.MinimumValue = DateTime.Today.ToShortDateString();
             RangeValidatorDatum.MaximumValue = DateTime.Today.AddYears(10).ToShortDateString();
-            //CCEvenementMaken allEvenement = new CCEvenementMaken();
-            //List<string> namenList = allEvenement.GetAllEvents();
-            //foreach(string naam in namenList)
-            //{
-            //    Label1.Text += naam + "<br />";
-            //}
-
+            
         }
-
+        /// <summary>
+        /// Door op de knop Opslaan te klikken worden de ingevulde waarden in een dictionary gezet en doorgelinkt naar CCEvenementAanmaken
+        /// </summary>
+        
         protected void tbOpslaan_Click(object sender, EventArgs e)
         {
             Dictionary<string, object> eventDictionary = new Dictionary<string, object>();
