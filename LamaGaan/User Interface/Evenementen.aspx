@@ -91,7 +91,7 @@
         </tr>
         <tr>
             <td colspan="3">
-                <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="ErrorMessage" HeaderText="U heet de volgende foutmeldingen:" />
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="ErrorMessage" HeaderText="U heeft de volgende foutmeldingen:" />
             </td>
         </tr>
     </table>
