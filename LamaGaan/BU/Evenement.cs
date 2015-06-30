@@ -9,7 +9,7 @@ namespace LamaGaan.BU
 {
     partial class Evenement
     {
-
+        public int IdLastAddedEvent;
         public string AddEvent(Evenement nieuwEvenement)
         {
             string response = "Evenement niet kunnen toevoegen";
@@ -21,6 +21,7 @@ namespace LamaGaan.BU
                 try
                 {
                     db.SaveChanges();
+                    IdLastAddedEvent = nieuwEvenement.Id; // id van pas toegevoegd evenement
                     response = "Evenement toegevoegd.";
                 }
                 catch (Exception)
@@ -29,7 +30,11 @@ namespace LamaGaan.BU
                 }
             }
             return response;
+            
+            
         }
+
+      
 
         //public List<string> GetAllEvents()
         //{

@@ -14,6 +14,9 @@ namespace LamaGaan.User_Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            RangeValidatorDatum.Type = ValidationDataType.Date;
+            RangeValidatorDatum.MinimumValue = DateTime.Today.ToShortDateString();
+            RangeValidatorDatum.MaximumValue = DateTime.Today.AddYears(10).ToShortDateString();
             //CCEvenementMaken allEvenement = new CCEvenementMaken();
             //List<string> namenList = allEvenement.GetAllEvents();
             //foreach(string naam in namenList)
@@ -25,16 +28,21 @@ namespace LamaGaan.User_Interface
 
         protected void tbOpslaan_Click(object sender, EventArgs e)
         {
-            Dictionary<string, object> eventDictionary = new Dictionary<string, object>();
-            eventDictionary.Add("Naam", tbNaam.Text);
-            eventDictionary.Add("Soort", ddlSoort.Text);
-            eventDictionary.Add("Datum", tbDatum.Text);
-            eventDictionary.Add("AantalPersonen", tbAantalPersonen.Text);
-            eventDictionary.Add("Korting", tbKorting.Text);
+            //if (!IsPostBack)
+            //{
+                
 
-            CCEvenementMaken Evenement = new CCEvenementMaken();
+                Dictionary<string, object> eventDictionary = new Dictionary<string, object>();
+                eventDictionary.Add("Naam", tbNaam.Text);
+                eventDictionary.Add("Soort", ddlSoort.Text);
+                eventDictionary.Add("Datum", tbDatum.Text);
+                eventDictionary.Add("AantalPersonen", tbAantalPersonen.Text);
+                eventDictionary.Add("Korting", tbKorting.Text);
 
-            Evenement.AddEvent(eventDictionary);
+                CCEvenementMaken Evenement = new CCEvenementMaken();
+                Evenement.AddEvent(eventDictionary);
+                Evenement.AddReservering(eventDictionary);
+            //}
         }
     }
 }
