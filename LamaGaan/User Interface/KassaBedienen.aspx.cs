@@ -9,31 +9,34 @@ using LamaGaan.BU;
 using LamaGaan.CC;
 //auteur: Mischa Rouleaux
 namespace LamaGaan.User_Interface
+
+    //code is gecomment, vanwege errors. Hierdoor kunnen de overige use-cases gewoon lopen.
+
 {
-    public partial class Kassa : System.Web.UI.Page
-    {
-        private LamaGaan.CC.CCKassa kassa;
+//    public partial class Kassa : System.Web.UI.Page
+//    {
+//        private LamaGaan.CC.CCKassa kassa;
 
-        protected void RekenAf_OnClick(object sender, EventArgs e)
-        {
-            Dictionary<string, object> nieuwKassa = new Dictionary<string, object>();
+//        protected void RekenAf_OnClick(object sender, EventArgs e)
+//        {
+//            Dictionary<string, object> nieuwKassa = new Dictionary<string, object>();
 
-            nieuwKassa.Add("Entree", HoeveelheidPersoon.Text);
-            nieuwKassa.Add("Fanta", HoeveelheidFanta.Text);
-            nieuwKassa.Add("Cola", HoeveelheidCola.Text);
-            nieuwKassa.Add("Koffie", HoeveelheidKoffie.Text);
-            nieuwKassa.Add("Thee", HoeveelheidThee.Text);
-            nieuwKassa.Add("Ijs", HoeveelheidIjsje.Text);
-            nieuwKassa.Add("Sleutelhanger", HoeveelheidSleutelhangers.Text);
-            nieuwKassa.Add("T-shirt", HoeveelheidTshirts.Text);
-            nieuwKassa.Add("Pet", HoeveelheidPetjes.Text);
-            nieuwKassa.Add("Pluche Lama", Hoeveelheidlamas.Text);
-
-
-
-            string response = kassa.ChangeKassa(nieuwKassa);
+//            nieuwKassa.Add("Entree", HoeveelheidPersoon.Text);
+//            nieuwKassa.Add("Fanta", HoeveelheidFanta.Text);
+//            nieuwKassa.Add("Cola", HoeveelheidCola.Text);
+//            nieuwKassa.Add("Koffie", HoeveelheidKoffie.Text);
+//            nieuwKassa.Add("Thee", HoeveelheidThee.Text);
+//            nieuwKassa.Add("Ijs", HoeveelheidIjsje.Text);
+//            nieuwKassa.Add("Sleutelhanger", HoeveelheidSleutelhangers.Text);
+//            nieuwKassa.Add("T-shirt", HoeveelheidTshirts.Text);
+//            nieuwKassa.Add("Pet", HoeveelheidPetjes.Text);
+//            nieuwKassa.Add("Pluche Lama", Hoeveelheidlamas.Text);
 
 
-        }
-    }
+
+//            string response = kassa.ChangeKassa(nieuwKassa);
+
+
+//        }
+//    }
 }

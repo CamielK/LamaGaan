@@ -10,24 +10,26 @@ using LamaGaan.BU;
     //auteur: Mischa Rouleaux
     //---------
 
-namespace LamaGaan.CC
-{
-    public class CCKassa
-    {
-        private Product product = new Product
+//code is gecomment, vanwege errors. Hierdoor kunnen de overige use-cases gewoon lopen.
 
-        public List<Int32>[] GetHoeveelheidProduct()
-        {
-            List<Int32>[] producten = product.GetHoeveelheidProduct();
-            return producten;
-        }
+//namespace LamaGaan.CC
+//{
+//    public class CCKassa
+//    {
+//        private Product product = new Product
+
+//        public List<Int32>[] GetHoeveelheidProduct()
+//        {
+//            List<Int32>[] producten = product.GetHoeveelheidProduct();
+//            return producten;
+//        }
 
 
 
-        public string ChangeKassa(Dictionary<string, object> nieuwKassa)
-        {
-            int HuidigeVoorraad = Int32.Parse(nieuwKassa["//......"].ToString());
+//        public string ChangeKassa(Dictionary<string, object> nieuwKassa)
+//        {
+//            int HuidigeVoorraad = Int32.Parse(nieuwKassa["//......"].ToString());
             
-        }
-    }
-}
+//        }
+//    }
+//}
