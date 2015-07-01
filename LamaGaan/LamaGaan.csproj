@@ -77,6 +77,7 @@
     <Content Include="Style\Images\Header.png" />
     <Content Include="Style\Images\lamagaanLogo.png" />
     <Content Include="Style\Images\background.png" />
+    <Content Include="User Interface\KassaBedienen.aspx" />
     <Content Include="User Interface\Evenementen.aspx" />
     <Content Include="User Interface\WerkroosterBekijken.aspx" />
     <Content Include="User Interface\WerkroosterMaken.aspx" />
@@ -92,6 +93,7 @@
     <Compile Include="BU\Taak.cs" />
     <Compile Include="BU\VerkoopOrder.cs" />
     <Compile Include="BU\Werkrooster.cs" />
+    <Compile Include="CC\CCKassa.cs" />
     <Compile Include="CC\CCEvenementMaken.cs" />
     <Compile Include="CC\CCWerkroosterBekijken.cs" />
     <Compile Include="CC\CCWerkroosterMaken.cs" />
@@ -148,6 +150,13 @@
     </Compile>
     <Compile Include="Taak.cs">
       <DependentUpon>LamaGaanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\KassaBedienen.aspx.cs">
+      <DependentUpon>KassaBedienen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Interface\KassaBedienen.aspx.designer.cs">
+      <DependentUpon>KassaBedienen.aspx</DependentUpon>
     </Compile>
     <Compile Include="User Interface\Evenementen.aspx.cs">
       <DependentUpon>Evenementen.aspx</DependentUpon>

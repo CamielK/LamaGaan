@@ -56,3 +56,6 @@ D:\Visual Studio\LamaGaan\LamaGaan\bin\Microsoft.AspNet.FriendlyUrls.xml
 D:\Visual Studio\LamaGaan\LamaGaan\obj\Debug\LamaGaan.csprojResolveAssemblyReference.cache
 D:\Visual Studio\LamaGaan\LamaGaan\obj\Debug\LamaGaan.dll
 D:\Visual Studio\LamaGaan\LamaGaan\obj\Debug\LamaGaan.pdb
+C:\Users\mischa\Documents\GitHub\LamaGaan\LamaGaan\obj\Debug\LamaGaan.csprojResolveAssemblyReference.cache
+C:\Users\mischa\Documents\GitHub\LamaGaan\LamaGaan\obj\Debug\LamaGaan.dll
+C:\Users\mischa\Documents\GitHub\LamaGaan\LamaGaan\obj\Debug\LamaGaan.pdb
