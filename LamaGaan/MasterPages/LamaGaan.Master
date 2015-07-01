@@ -26,7 +26,7 @@
             <aside id="Sidebar">
                 <br />Use case Camiel Kerkhofs:<br /><a href="../User Interface/WerkroosterMaken.aspx">(1)Werkrooster maken</a><br /><a href="../User Interface/WerkroosterBekijken.aspx">(2)Werkrooster bekijken</a><br /><br />
                 <br />Use case Dennis Kooij:<br /><a href="../User Interface/Evenementen.aspx">Evenement maken</a><br /><br />
-                <br />Use case Mischa Rouleaux:<br /><a href="#">Kassa verkoop</a><br /><br />
+                <br />Use case Mischa Rouleaux:<br /><a href="../User Interface/KassaBedienen.aspx">Kassa verkoop</a><br /><br />
             </aside>
             <footer>
                 <span class="copyright">

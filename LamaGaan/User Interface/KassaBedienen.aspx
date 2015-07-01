@@ -1,7 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/LamaGaan.Master" AutoEventWireup="true" CodeBehind="KassaBedienen.aspx.cs" Inherits="LamaGaan.User_Interface.Evenementen" %>
 
 <%-- auteur: Mischa Rouleaux --%>
-<asp:Content ID="Content1" runat="server" contentplaceholderid="cpMainContent">
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="cpMainContent">
     
     <asp:Label ID="Entree" runat="server" Text="Entree:"></asp:Label>
     <br />

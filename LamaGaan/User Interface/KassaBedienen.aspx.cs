@@ -8,13 +8,19 @@ using System.Web.UI.WebControls;
 using LamaGaan.BU;
 using LamaGaan.CC;
 //auteur: Mischa Rouleaux
+
 namespace LamaGaan.User_Interface
 
     //code is gecomment, vanwege errors. Hierdoor kunnen de overige use-cases gewoon lopen.
 
 {
-//    public partial class Kassa : System.Web.UI.Page
-//    {
+    public partial class Kassa : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
 //        private LamaGaan.CC.CCKassa kassa;
 
 //        protected void RekenAf_OnClick(object sender, EventArgs e)
@@ -38,5 +44,5 @@ namespace LamaGaan.User_Interface
 
 
 //        }
-//    }
+    }
 }
